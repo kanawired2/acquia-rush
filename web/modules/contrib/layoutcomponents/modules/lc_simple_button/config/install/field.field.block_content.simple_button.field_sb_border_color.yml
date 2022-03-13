@@ -1,0 +1,24 @@
+uuid: 38a92d26-c471-4447-891c-e953f2a70751
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_border_color
+  module:
+    - color_field
+_core:
+  default_config_hash: 8sZxsF9y_UijzQyxGftgIw2Ucv-PmlxGtnz-w-QkOpc
+id: block_content.simple_button.field_sb_border_color
+field_name: field_sb_border_color
+entity_type: block_content
+bundle: simple_button
+label: 'Border color'
+description: 'Set the border color of this button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

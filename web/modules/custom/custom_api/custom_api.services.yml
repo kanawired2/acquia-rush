@@ -1,0 +1,10 @@
+services:
+  logger.channel.custom_api:
+    parent: logger.channel_base
+    arguments: ['custom_api']
+  custom_api.read_excel:
+    class: Drupal\custom_api\ReadExcel
+    arguments: ['@entity_type.manager', '@current_user', '@current_route_match']  
+  custom_api.import:
+    class: Drupal\custom_api\ImportHri
+    arguments: ['@custom_api.read_excel']

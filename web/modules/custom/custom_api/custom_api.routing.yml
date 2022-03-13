@@ -1,0 +1,16 @@
+
+custom_api.symfony_controller_domCrawler:
+  path: '/custom_api/dom'
+  defaults:
+    _controller: '\Drupal\custom_api\Controller\SymfonyController::domCrawler'
+    _title: 'domCrawler'
+  requirements:
+    _permission: 'access content'
+
+custom_api.excel_reader_controller_readExcel:
+  path: '/api/excel'
+  defaults:
+    _controller: '\Drupal\custom_api\Controller\ExcelReaderController::readExcel'
+    _title: 'readExcel'
+  requirements:
+    _permission: 'access content'

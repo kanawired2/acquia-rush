@@ -1,0 +1,5 @@
+#drupal-off-canvas ul li a.inline-block-list__item.simple_countdown:before {
+  content: "\f254";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

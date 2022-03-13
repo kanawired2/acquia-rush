@@ -1,0 +1,25 @@
+uuid: f33ea92f-da99-45d0-b4e0-c5905db7faa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.storage.block_content.field_sv_video_type
+  module:
+    - options
+_core:
+  default_config_hash: 8bjZACi7iSPxvl_xfxYZqfry_c3vMcaWUCgaEtbuw10
+id: block_content.simple_video.field_sv_video_type
+field_name: field_sv_video_type
+entity_type: block_content
+bundle: simple_video
+label: 'Video type'
+description: 'Define how to upload the video: by URL or uploading one new'
+required: false
+translatable: false
+default_value:
+  -
+    value: video_url
+default_value_callback: ''
+settings: {  }
+field_type: list_string

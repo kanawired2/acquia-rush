@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * LC Simple Iframe module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_reference_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_reference_field':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_reference_field')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_reference_field_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_reference_field/lc_simple_reference_field';
+}

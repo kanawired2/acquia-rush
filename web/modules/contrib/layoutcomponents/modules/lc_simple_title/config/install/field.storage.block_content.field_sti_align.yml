@@ -1,0 +1,30 @@
+uuid: 73079c05-fe46-433f-b27d-f46a2cd2651b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_sti_align
+field_name: field_sti_align
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: justify-content-start
+      label: Left
+    -
+      value: justify-content-center
+      label: Center
+    -
+      value: justify-content-end
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

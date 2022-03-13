@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * LC Simple tabs module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_tabs_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_tabs' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_tabs_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_tabs/lc_simple_tabs';
+}
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_tabs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_tabs':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_tabs')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}
+
+/**
+ * Implements hook_entity_form_alter().
+ */
+function lc_simple_tabs_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  if ($entity_form['#bundle'] == 'simple_tab_item') {
+    if (isset($entity_form['#default_value'])) {
+      $label = t('Edit Layout');
+      if (!empty($entity_form['#default_value']->id())) {
+        $href = "/block/" . $entity_form['#default_value']->id() . "/layout";
+        $markup = '<a href="' . $href . '" target="blank" class="simplte-tabs-edit-layout btn btn-success">' . $label . '</a>';
+      }
+      else {
+        $markup = t('You need to press "Update" button before edit with Layout this tab.');
+      }
+      $markup .= '<br><p class="text-danger">* ' . t('When you save the layout you will have to reload this page') . '</p>';
+      $entity_form['layout'] = [
+        '#type' => 'markup',
+        '#markup' => $markup,
+        '#weight' => '-1',
+      ];
+
+      /** @var \Drupal\block_content\Entity\BlockContent $block */
+      $block = $entity_form['#default_value'];
+
+      // LC Title.
+      $entity_form['field_sta_item_title']['widget'][0]['value']['#description'] = t('Set the title of this tab');
+      $title = $entity_form['field_sta_item_title']['widget'][0]['value'];
+      $entity_form['field_sta_item_title']['widget'][0]['value'] = $lcApi->getComponentElement(
+        [
+          'id' => 'block_' . $block->get('info')->getString() . '-tabs',
+          'no_lc' => TRUE,
+        ],
+        $title
+      );
+
+      // LC Anchor.
+      $entity_form['field_st_item_anchor']['widget'][0]['value']['#description'] = t('Set the anchor of this tab');
+      $anchor = $entity_form['field_st_item_anchor']['widget'][0]['value'];
+      $entity_form['field_st_item_anchor']['widget'][0]['value'] = $lcApi->getComponentElement(
+        [
+          'id' => 'block_' . $block->get('info')->getString() . '-tabs',
+          'no_lc' => TRUE,
+        ],
+        $anchor
+      );
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    if (isset($block)) {
+      $block->isDefaultRevision(TRUE);
+      $block->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_tabs_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_tabs") {
+    /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+    $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->get('info')->getString());
+
+    // LC inline video extra class.
+    $extra_class = $form['field_sta_extra_class']['widget'][0]['value'];
+    $form['field_sta_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+      [
+        'id' => 'block_' . $block_id . '-tabs',
+        'input' => 'text',
+        'type' => 'class',
+        'style' => 'extra_class',
+        'element' => 'text',
+      ],
+      $extra_class
+    );
+
+    $form['field_st_item']['widget']['#field_title'] = '';
+  }
+}

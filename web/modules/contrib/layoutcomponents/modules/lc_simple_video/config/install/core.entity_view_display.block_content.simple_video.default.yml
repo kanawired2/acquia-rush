@@ -1,0 +1,55 @@
+uuid: 56f39d91-b5d1-438f-8573-1712349c2f13
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.field.block_content.simple_video.field_sv_upload_video
+    - field.field.block_content.simple_video.field_sv_video
+    - field.field.block_content.simple_video.field_sv_video_extra_attributes
+    - field.field.block_content.simple_video.field_sv_video_extra_class
+    - field.field.block_content.simple_video.field_sv_video_ratio
+    - field.field.block_content.simple_video.field_sv_video_type
+    - field.field.block_content.simple_video.field_sv_video_veil
+  module:
+    - options
+    - video_embed_field
+_core:
+  default_config_hash: Pria55T06MgOkQd-cjGjcNi7aKrZTsH3b_2C6b36q5s
+id: block_content.simple_video.default
+targetEntityType: block_content
+bundle: simple_video
+mode: default
+content:
+  field_sv_upload_video:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+  field_sv_video:
+    type: video_embed_field_video
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+  field_sv_video_type:
+    type: list_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_sv_video_extra_attributes: true
+  field_sv_video_extra_class: true
+  field_sv_video_ratio: true
+  field_sv_video_veil: true

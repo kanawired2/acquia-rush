@@ -1,0 +1,7 @@
+lc_simple_image:
+  version: VERSION
+  css:
+    layout:
+      css/lc_simple_image.css: {}
+  js:
+    js/lc_simple_image.js: {}

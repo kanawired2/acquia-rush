@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\layoutcomponents\Api\Select;
+use Drupal\layoutcomponents\Api\Checkbox;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_slick_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_slick/lc_slick';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function lc_slick_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'layout_builder_configure_section') {
+    // Add the items if the form is not empty.
+    if (!array_key_exists('actions', $form)) {
+      return;
+    }
+    // Form section.
+    $section = &$form['layout_settings']['container']['section']['container'];
+
+    /** @var \Drupal\layoutcomponents\Form\LcConfigureSection $obj */
+    $obj = $form_state->getFormObject();
+ 
+
+    $configuration = $obj->getLayoutSettings()->getConfiguration();
+
+    $lcApiSelect = new Select();
+    $lcApiCheckbox = new Checkbox();
+
+    $slick_options = \Drupal::entityTypeManager()->getStorage('slick')->loadMultiple();
+    $options = [
+      'none' => t('None'),
+    ];
+
+    /** @var \Drupal\slick\Entity\Slick $option */
+    if (!empty($slick_options)) {
+      foreach ($slick_options as $option) {
+        $options[$option->get('name')] = $option->get('label');
+      }
+    }
+
+    $section['general']['structure']['section_carousel'] = $lcApiCheckbox->normal(
+      [
+        'id' => '',
+        'title' => t('Slick Carousel'),
+        'description' => t('Show this section as carousel'),
+        'default_value' => $configuration['section']['general']['structure']['section_carousel'] ?: FALSE,
+      ]
+    );
+
+    $section['general']['structure']['section_carousel_slick'] = $lcApiSelect->normal(
+      [
+        'id' => '',
+        'title' => t('Slick Skin'),
+        'description' => ('Set the skin for this carousel'),
+        'default_value' => $configuration['section']['general']['structure']['section_carousel_slick'] ?: 'none',
+        'options' => $options,
+      ]
+    );
+  }
+}
+

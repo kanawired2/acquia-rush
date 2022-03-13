@@ -1,0 +1,13 @@
+div.field.field--name-field-media-image.field--type-image {
+  width: 100%;
+}
+
+.block-inline-blocksimple-image {
+  text-align: center;
+}
+
+#drupal-off-canvas ul li a.inline-block-list__item.simple_image:before {
+  content: "\f03e";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

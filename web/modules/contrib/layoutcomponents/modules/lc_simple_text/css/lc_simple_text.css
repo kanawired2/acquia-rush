@@ -1,0 +1,8 @@
+#drupal-off-canvas ul li a.inline-block-list__item.simple_text:before {
+  position: relative;
+  float: left;
+  content: url("../images/text.svg");
+  width: 60px;
+  height: 80px;
+  margin-top: 10px;
+}

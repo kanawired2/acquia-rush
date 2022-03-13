@@ -1,0 +1,142 @@
+layoutcomponents_one_column:
+  label: Layout Components - One Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-12
+  icon_map:
+    - [first]
+
+layoutcomponents_two_column:
+  label: Layout Components - Two Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  default_region: first
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-6
+    second:
+      label: 'Second'
+      classes:
+        - col-sm-6
+  icon_map:
+    - [first_above, second_above]
+
+layoutcomponents_three_column:
+  label: Layout Components - Three Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  default_region: first
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-4
+    second:
+      label: 'Second '
+      classes:
+        - col-sm-4
+    third:
+      label: 'Thrid'
+      classes:
+        - col-sm-4
+  icon_map:
+    - [first_above, second_above, third_above]
+
+layoutcomponents_four_column:
+  label: Layout Components - Four Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  default_region: first
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-3
+    second:
+      label: 'Second '
+      classes:
+        - col-sm-3
+    third:
+      label: 'Thrid'
+      classes:
+        - col-sm-3
+    quarter:
+      label: 'Quarter'
+      classes:
+        - col-sm-3
+  icon_map:
+    - [first_above, second_above, third_above, quarter_above]
+
+layoutcomponents_five_column:
+  label: Layout Components - Five Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  default_region: first
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-2
+    second:
+      label: 'Second '
+      classes:
+        - col-sm-2
+    third:
+      label: 'Thrid'
+      classes:
+        - col-sm-2
+    quarter:
+      label: 'Quarter'
+      classes:
+        - col-sm-2
+    fifth:
+      label: 'Fifth'
+      classes:
+        - col-sm-2
+  icon_map:
+    - [first_above, second_above, third_above, quarter_above, fifth_above]
+
+layoutcomponents_six_column:
+  label: Layout Components - Six Column
+  category: Layout Components
+  class: '\Drupal\layoutcomponents\Plugin\Layout\LcBase'
+  template: templates/layout--layoutcomponents-base
+  default_region: first
+  regions:
+    first:
+      label: 'First'
+      classes:
+        - col-sm-2
+    second:
+      label: 'Second '
+      classes:
+        - col-sm-2
+    third:
+      label: 'Thrid'
+      classes:
+        - col-sm-2
+    quarter:
+      label: 'Quarter'
+      classes:
+        - col-sm-2
+    fifth:
+      label: 'Fifth'
+      classes:
+        - col-sm-2
+    sixth:
+      label: 'Sixth'
+      classes:
+        - col-sm-2
+  icon_map:
+    - [first_above, second_above, third_above, quarter_above, fifth_above, sixth_above]

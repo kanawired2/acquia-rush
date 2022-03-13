@@ -1,0 +1,23 @@
+uuid: 5c775d31-fe30-42f4-889e-06fda185635f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_align
+  module:
+    - options
+id: block_content.simple_title.field_sti_align
+field_name: field_sti_align
+entity_type: block_content
+bundle: simple_title
+label: Align
+description: 'Set the align of this title'
+required: false
+translatable: false
+default_value:
+  -
+    value: justify-content-start
+default_value_callback: ''
+settings: {  }
+field_type: list_string

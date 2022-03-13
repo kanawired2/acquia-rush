@@ -1,0 +1,30 @@
+title_text: ''
+title_color:
+  settings:
+    color: '#000000'
+    opacity: '1'
+title_type: h1
+title_align: text-left
+title_size: '0'
+title_border: none
+title_border_size: '0'
+title_border_color:
+  settings:
+    color: '#f75461'
+    opacity: '1'
+title_margin_top: '0'
+title_margin_bottom: '0'
+section_type: div
+background_color:
+  settings:
+    color: ''
+    opacity: '1'
+full_width: 0
+full_width_container: 0
+full_width_container_title: 0
+height: auto
+height_size: '0'
+top_padding: '0'
+bottom_padding: '0'
+extra_class: ''
+extra_attributes: ''

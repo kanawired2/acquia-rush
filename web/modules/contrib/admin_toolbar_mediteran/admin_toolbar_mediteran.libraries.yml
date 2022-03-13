@@ -1,0 +1,13 @@
+admin_toolbar_mediteran:
+  version: VERSION
+  css:
+    theme:
+      css/admin_toolbar/admin.toolbar.css: { weight: 1000 }
+      css/admin_toolbar/tools.css: { weight: 1000 }
+      css/toolbar/toolbar.theme.css: { weight: 1000 }
+      css/toolbar/toolbar.icons.theme.css: { weight: 1000 }
+      css/toolbar/toolbar.module.css: { weight: 1000 }
+      css/toolbar/toolbar.menu.css: { weight: 1000 }
+      css/shortcut/shortcut.icons.theme.css: { weight: 1000 }
+      css/shortcut/shortcut.theme.css: { weight: 1000 }
+      css/user/user.icons.admin.css: { weight: 1000 }

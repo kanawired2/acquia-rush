@@ -1,0 +1,24 @@
+uuid: c3a1a610-44e2-4e7c-ae7c-d831f580f4e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_background_color
+  module:
+    - color_field
+_core:
+  default_config_hash: 183UFYEWWZh39IwyS0WVOwPahlp1YrezEM42c5He4yw
+id: block_content.simple_button.field_sb_background_color
+field_name: field_sb_background_color
+entity_type: block_content
+bundle: simple_button
+label: 'Background color'
+description: 'Set the background color of this button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

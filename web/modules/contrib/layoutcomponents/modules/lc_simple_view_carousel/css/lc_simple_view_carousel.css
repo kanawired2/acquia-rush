@@ -1,0 +1,8 @@
+#drupal-off-canvas ul li a.inline-block-list__item.simple_view_carousel:before {
+  position: relative;
+  float: left;
+  content: url("../images/slider_icon.svg") !important;
+  width: 60px;
+  height: 80px;
+  margin-top: 10px;
+}

@@ -1,0 +1,19 @@
+uuid: 0592e7a2-86fa-4751-b984-dad4bf4f110a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_iframe
+    - field.storage.block_content.field_sif_extra_attributes
+id: block_content.simple_iframe.field_sif_extra_attributes
+field_name: field_sif_extra_attributes
+entity_type: block_content
+bundle: simple_iframe
+label: 'Extra attributes'
+description: 'Set the extra attributes of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

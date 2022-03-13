@@ -1,0 +1,5 @@
+name: 'custom_api'
+type: module
+description: 'Module containing Drupal API to cater site specific functionality.'
+core_version_requirement: ^9
+package: 'Custom'

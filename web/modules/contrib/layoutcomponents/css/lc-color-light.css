@@ -1,0 +1,2548 @@
+/* line 222, Z:/lc/html/web/modules/custom/layoutcomponents/scss/utils/variables.scss */
+.layout-builder-form .layout-builder__message .alert-success a, .layout-builder-form, .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a, .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox label, .lc-tooltip, .ui-dialog, .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar, .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-title, .ui-dialog.ui-widget-content, .ui-dialog.ui-widget-content input[type="text"], .ui-dialog.ui-widget-content .js-media-library-add-form, .ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li .form-item, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .media-library-item .media-library-item__attributes .media-library-item__name, .ui-dialog.ui-widget-content .views-element-container .view-filters .form--inline, .ui-dialog.ui-widget-content .form-item-upload, .ui-dialog.ui-widget-content .form-item-upload .description, .ui-dialog.ui-widget-content .form-item-upload .form-control, .ui-dialog .ui-dialog-titlebar, .ui-dialog #drupal-off-canvas .form-item, .ui-dialog #drupal-off-canvas .form-item label, .ui-dialog #drupal-off-canvas .form-item .webform-element-description, .ui-dialog #drupal-off-canvas .form-item input, .ui-dialog #drupal-off-canvas .form-item select, .ui-dialog #drupal-off-canvas .form-item textarea, .ui-dialog #drupal-off-canvas .form-item input[type="number"], .ui-dialog #drupal-off-canvas input.button[type="submit"], .ui-dialog #drupal-off-canvas .inline-block-create-button, .ui-dialog #drupal-off-canvas .form-type-search input.js-layout-builder-filter.form-search, .ui-dialog #drupal-off-canvas a[data-drupal-selector*="back"], .ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"], .ui-dialog #drupal-off-canvas a[data-drupal-selector*="cancel"], .ui-dialog #drupal-off-canvas button[data-drupal-selector*="submit"], .ui-dialog #drupal-off-canvas fieldset select, .ui-dialog #drupal-off-canvas fieldset .form-select, .ui-dialog #drupal-off-canvas fieldset input[type="number"], .ui-dialog #drupal-off-canvas fieldset input[type="text"], .ui-dialog #drupal-off-canvas fieldset select option, .ui-dialog #drupal-off-canvas fieldset input .form-date, .ui-dialog #drupal-off-canvas fieldset input .form-time, .ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.sliderwidget-display-values-field, .ui-dialog #drupal-off-canvas span .fieldset-legend span.lc-lateral-title, .ui-dialog #drupal-off-canvas .table-responsive > span.lc-lateral-title, .ui-dialog #drupal-off-canvas label[for^="edit-settings-block-"] > span .lc-lateral-title, .ui-dialog #drupal-off-canvas div.layout_builder__add-section-confirm, .ui-dialog #drupal-off-canvas div.layout_builder__remove-description, .ui-dialog #drupal-off-canvas div.details-wrapper span.lc-lateral-title, .ui-dialog #drupal-off-canvas div.horizontal-tabs ul li a, .ui-dialog #drupal-off-canvas div.horizontal-tabs ul li strong, .ui-dialog #drupal-off-canvas div.block-categories.js-layout-builder-categories details ul.links li a, .ui-dialog #drupal-off-canvas a, .ui-dialog #drupal-off-canvas .text-format-wrapper, .ui-dialog #drupal-off-canvas .text-format-wrapper .filter-wrapper .filter-help, .ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper, .ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table, .ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .btn-success, .ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper input, .ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .field-prefix, .ui-dialog #drupal-off-canvas details > summary, .ui-dialog #drupal-off-canvas details .details-wrapper .details-description, .ui-dialog #drupal-off-canvas .layout-selection li a div, .ui-dialog #drupal-off-canvas ul, .ui-dialog #drupal-off-canvas form.layout-builder-section-move .table thead tr th, .ui-dialog #drupal-off-canvas form.layout-builder-section-move .table tbody tr td, div#drupal-off-canvas *,
+div#drupal-off-canvas details,
+div#drupal-off-canvas div.details-wrapper,
+div#drupal-off-canvas fieldset label,
+div#drupal-off-canvas *:not(div) {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+/* line 226, Z:/lc/html/web/modules/custom/layoutcomponents/scss/utils/variables.scss */
+.layout-builder-form .form-actions input[type="checkbox"]:checked:after, .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox input:checked:after, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table input[type="checkbox"]:checked:after, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .js-click-to-select-checkbox input[type="checkbox"]:checked:after, .ui-dialog #drupal-off-canvas .js-form-type-checkbox input[type="checkbox"]:checked:after, #layout-builder.layout-builder a.layout-builder__section_link-move:before, #layout-builder.layout-builder a.layout-builder__block_link-move:before, #layout-builder.layout-builder a.layout-builder__section_link-remove:before, #layout-builder.layout-builder a.layout-builder__block_link-remove:before, #layout-builder.layout-builder a.layout-builder__section_link-update:before, #layout-builder.layout-builder a.layout-builder__link-add:before, #layout-builder.layout-builder a.layout-builder__link-add-section:before, #layout-builder.layout-builder a.layout-builder__column_link-add:before, #layout-builder.layout-builder a.layout-builder__section_link-configure:before, #layout-builder.layout-builder a.layout-builder__column_link-configure:before, #layout-builder.layout-builder a.layout-builder__block_link-configure:before, .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-titlebar-close:after, .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:after, .ui-dialog #drupal-off-canvas fieldset.js-form-type-search .form-type-search:before, .ui-dialog #drupal-off-canvas label.js-form-type-checkbox span.lc-lateral-info:after, .ui-dialog #drupal-off-canvas label[for^="edit-settings-block-"] > span.lc-lateral-info:after, .ui-dialog #drupal-off-canvas div button.color_field_widget_box__square.active:before, .ui-dialog #drupal-off-canvas div.media-library-item button.media-library-item__remove:before, .ui-dialog #drupal-off-canvas ul li a.inline-block-list__item:before {
+  font-family: "FontAwesome";
+}
+
+/* line 29, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions input[type="checkbox"], .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox input, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table input[type="checkbox"], .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .js-click-to-select-checkbox input[type="checkbox"], .ui-dialog #drupal-off-canvas .js-form-type-checkbox input[type="checkbox"] {
+  position: relative;
+  float: left;
+  cursor: pointer;
+  opacity: 1;
+  z-index: 1;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+/* line 39, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions input:focus[type="checkbox"], .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox input:focus, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table input:focus[type="checkbox"], .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .js-click-to-select-checkbox input:focus[type="checkbox"], .ui-dialog #drupal-off-canvas .js-form-type-checkbox input:focus[type="checkbox"] {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #0196CE;
+}
+
+/* line 44, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions input[type="checkbox"]:before, .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox input:before, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table input[type="checkbox"]:before, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .js-click-to-select-checkbox input[type="checkbox"]:before, .ui-dialog #drupal-off-canvas .js-form-type-checkbox input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid #005574;
+  border-radius: 3px;
+  background-color: white;
+}
+
+/* line 58, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions input[type="checkbox"]:checked:after, .layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox input:checked:after, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form table input[type="checkbox"]:checked:after, .ui-dialog.ui-widget-content .views-element-container .view-content .views-form .js-click-to-select-checkbox input[type="checkbox"]:checked:after, .ui-dialog #drupal-off-canvas .js-form-type-checkbox input[type="checkbox"]:checked:after {
+  content: "\f00c";
+  position: absolute;
+  display: block;
+  font-size: 11px;
+  color: #005574;
+  top: 0.5px;
+  left: 2.5px;
+}
+
+/* line 71, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .layout-builder__message .alert-success a {
+  color: #0196CE;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* line 77, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .layout-builder__message .alert-success a:focus {
+  outline: none;
+  color: #0077A2;
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 0 #0077A2;
+}
+
+/* line 84, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .layout-builder__message .alert-success a:hover {
+  color: #0077A2;
+}
+
+/* line 89, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .btn, .layout-builder-form .form-actions .button {
+  font-weight: 800;
+  border: none;
+  background: #005574;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+}
+
+/* line 100, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .btn:focus, .layout-builder-form .form-actions .button:focus {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #0196CE;
+}
+
+/* line 105, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .btn:hover, .layout-builder-form .form-actions .button:hover {
+  background: #013D55;
+}
+
+/* line 110, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions, .layout-builder-form .form-type-vertical-tabs {
+  background: #F0F7FA;
+  border: 2px solid #E0EFF4;
+  border-radius: 4px;
+}
+
+/* line 118, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form {
+  color: #02202B;
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 128, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions {
+  width: 100%;
+  padding: 12px;
+}
+
+/* line 136, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .form-wrapper {
+  margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+}
+
+/* line 139, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .form-wrapper .form-type-checkbox .description {
+  margin-left: 0;
+}
+
+/* line 142, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .form-wrapper .form-type-checkbox label {
+  font-weight: 600;
+}
+
+/* line 148, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-actions .button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* line 171, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs {
+  border: none;
+}
+
+/* line 173, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu {
+  border: none;
+  padding-left: 12px;
+}
+
+/* line 176, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item {
+  border: none;
+  background: transparent;
+  color: #02202B;
+}
+
+/* line 180, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a {
+  text-decoration: underline;
+  display: block;
+}
+
+/* line 185, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a:focus {
+  outline: none;
+}
+
+/* line 187, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a:focus .vertical-tabs__menu-item-summary {
+  display: block;
+  color: #0077A2;
+}
+
+/* line 193, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a .vertical-tabs__menu-item-title {
+  color: #02202B;
+  text-decoration-color: #02202B;
+}
+
+/* line 197, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a .vertical-tabs__menu-item-summary {
+  text-decoration: underline;
+  color: #0196CE;
+}
+
+/* line 200, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a .vertical-tabs__menu-item-summary:focus {
+  outline: none;
+  color: #0077A2;
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 0 #0077A2;
+}
+
+/* line 207, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__menu .vertical-tabs__menu-item a .vertical-tabs__menu-item-summary:hover {
+  color: #0077A2;
+}
+
+/* line 216, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item {
+  margin: 0;
+}
+
+/* line 218, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox {
+  padding: 0;
+}
+
+/* line 223, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.layout-builder-form .form-type-vertical-tabs .vertical-tabs .vertical-tabs__panes .details-wrapper .form-item.form-type-checkbox label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* line 240, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .container {
+  padding: 0;
+}
+
+/* line 245, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-2 {
+  flex: 0 0 14.66667%;
+  max-width: 14.66667%;
+}
+
+/* line 250, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-3 {
+  flex: 0 0 23%;
+  max-width: 23%;
+}
+
+/* line 255, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-4 {
+  flex: 0 0 31.33333%;
+  max-width: 31.33333%;
+}
+
+/* line 260, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-6 {
+  flex: 0 0 48%;
+  max-width: 48%;
+}
+
+/* line 265, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-8 {
+  flex: 0 0 64.66666%;
+  max-width: 64.66666%;
+}
+
+/* line 270, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder .col-md-12 {
+  flex: 0 0 98%;
+  max-width: 98%;
+}
+
+/* line 275, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder {
+  padding: calc(0.75rem - 1px);
+  border: 2px solid #E0EFF4;
+  background-color: #F0F7FA;
+  border-radius: 4px;
+  color: #02202B;
+}
+
+/* line 282, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .row {
+  margin: 0;
+}
+
+/* line 286, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .alert-warning {
+  background: #005574;
+  color: white;
+  border: 2px solid #013D55;
+  margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+}
+
+/* line 293, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .alert-success {
+  color: #02202B;
+}
+
+/* line 299, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a {
+  color: #F0F7FA;
+}
+
+/* line 301, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a:hover {
+  text-decoration: none;
+}
+
+/* line 304, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a:hover, #layout-builder.layout-builder a:visited, #layout-builder.layout-builder a:active {
+  color: white;
+}
+
+/* line 312, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link-move:before, #layout-builder.layout-builder a.layout-builder__block_link-move:before {
+  content: "\f0b2";
+  cursor: move;
+}
+
+/* line 321, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link:hover, #layout-builder.layout-builder a.layout-builder__column_link:hover {
+  text-decoration: none;
+}
+
+/* line 327, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link-move:before {
+  content: "\f338";
+  cursor: pointer;
+}
+
+/* line 335, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link-remove:before, #layout-builder.layout-builder a.layout-builder__block_link-remove:before {
+  content: "\f2ed";
+}
+
+/* line 342, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link-update:before {
+  content: "\f362";
+}
+
+/* line 351, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__link-add:before, #layout-builder.layout-builder a.layout-builder__link-add-section:before, #layout-builder.layout-builder a.layout-builder__column_link-add:before {
+  content: "\f067";
+}
+
+/* line 360, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__section_link-configure:before, #layout-builder.layout-builder a.layout-builder__column_link-configure:before, #layout-builder.layout-builder a.layout-builder__block_link-configure:before {
+  content: "\f0ad";
+}
+
+/* line 366, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__add-block {
+  color: #02202B;
+  font-size: 20px;
+}
+
+/* line 371, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder a.layout-builder__block_link-move, #layout-builder.layout-builder a.layout-builder__block_link-remove, #layout-builder.layout-builder a.layout-builder__block_link-configure {
+  font-size: 13px;
+}
+
+/* line 379, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__region.js-layout-builder-region {
+  outline: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: auto;
+  min-height: 50px;
+  /*margin: 20px 0 15px 0;*/
+}
+
+/* line 390, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .link-rounded {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  color: #E0EFF4;
+}
+
+/* line 404, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section {
+  width: 100%;
+  height: 0px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  outline: none;
+  border: none;
+  z-index: 998;
+}
+
+/* line 414, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section.is-layout-builder-highlighted {
+  border: 2px solid #0077A2;
+  border: 0;
+}
+
+/* line 421, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a {
+  z-index: 200;
+  box-shadow: 0px 0px 0px 4px #F0F7FA;
+}
+
+/* line 424, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a:hover {
+  text-decoration: none;
+  transition: 0.9s;
+}
+
+/* line 429, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a.layout-builder__link-add-section {
+  color: white;
+  font-size: 1em;
+  font-family: sans-serif;
+  position: relative;
+  top: -4px;
+}
+
+/* line 436, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a.layout-builder__link {
+  display: inline-block;
+  color: #E0EFF4;
+  background: #02202B;
+}
+
+/* line 441, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a.layout-builder__link:hover {
+  background: #013D55;
+}
+
+/* line 445, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a.layout-builder__link.layout-builder__link-add {
+  font-size: 15px;
+  z-index: 10;
+  position: absolute;
+  top: -15px;
+}
+
+/* line 452, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-section a.layout-builder__link:hover {
+  color: white;
+}
+
+/* line 459, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-block {
+  background: none;
+}
+
+/* line 462, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-block a.layout-builder__column_link-add {
+  background-color: #0196CE;
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: 0.6s ease-out;
+  -moz-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
+  line-height: 30px;
+}
+
+/* line 472, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__add-block a.layout-builder__column_link-add:hover {
+  text-decoration: none;
+  transition: 0.9s;
+  background: #0196CE;
+}
+
+/* line 482, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder {
+  border: 2px dashed #0196CE;
+  background-color: transparent;
+  padding: 0px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 491, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder .field__label {
+  margin-left: 10px;
+}
+
+/* line 495, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder .block-layout-builder, #layout-builder.layout-builder .block-layout-builder .block {
+  border: 2px dashed transparent;
+}
+
+/* line 499, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder [tabindex="-1"] {
+  pointer-events: inherit;
+}
+
+/* line 503, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder.is-layout-builder-highlighted {
+  border: 2px solid #0196CE;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 511, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder .layout-builder__configure-block {
+  position: relative;
+  top: -2px;
+  margin: auto;
+  z-index: 10;
+  background-color: #0196CE;
+  border-radius: 0px 0px 4px 4px;
+  text-align: center;
+  display: table;
+  visibility: visible !important;
+}
+
+/* line 522, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder .layout-builder__configure-block .layout-builder__block_link {
+  padding: 5px;
+  color: #E0EFF4;
+}
+
+/* line 525, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .block-layout-builder .layout-builder__configure-block .layout-builder__block_link:hover {
+  color: white;
+}
+
+/* line 532, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder-block {
+  border: 2px dashed #0196CE;
+  margin-bottom: 10px;
+  background-color: transparent;
+  padding: 0px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 541, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder-block [tabindex="-1"] {
+  pointer-events: inherit;
+}
+
+/* line 545, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder-block.is-layout-builder-highlighted {
+  border: 2px solid #0196CE;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 554, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section {
+  border: 2px solid #02202B;
+  margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 563, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .is-layout-builder-highlighted {
+  border: 2px solid #013D55;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 571, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section a {
+  color: #E0EFF4;
+}
+
+/* line 573, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section a:hover {
+  color: white;
+}
+
+/* line 578, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items {
+  position: absolute;
+  background: #02202B;
+  z-index: 10;
+  width: auto;
+  text-align: end;
+  margin-top: -2px;
+  margin-left: -2px;
+  padding: 0 4px;
+  border-radius: 0px 0px 4px 0px;
+}
+
+/* line 589, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a {
+  color: #E0EFF4;
+}
+
+/* line 591, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__section_link, #layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__column_link, #layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__block_link {
+  padding: 4px 6px;
+  font-size: 18px;
+  display: inline-block;
+  color: #E0EFF4;
+  text-decoration: none;
+}
+
+/* line 600, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__section_link:hover, #layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__column_link:hover, #layout-builder.layout-builder .layout-builder__section .layout_builder__configure_section_items a.layout-builder__block_link:hover {
+  color: white;
+}
+
+/* line 607, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout {
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 45px;
+  padding: 0;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 617, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout.is-layout-builder-highlighted {
+  border: 2px solid #005574;
+  border-radius: 4px;
+}
+
+/* line 634, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid #0077A2;
+  z-index: 80 !important;
+  border-radius: 4px;
+  margin: 1%;
+  padding: 15px;
+}
+
+/* line 644, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column:hover {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid #0077A2;
+}
+
+/* line 651, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column .layout-builder__configure-column {
+  z-index: 80;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  padding: 0 5px;
+  text-align: right;
+  background-color: #0077A2;
+  border-radius: 0px 4px 0px 4px;
+}
+
+/* line 663, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column .layout-builder__configure-column a:hover:before {
+  color: white;
+}
+
+/* line 667, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column .layout-builder__configure-column a:before {
+  color: #E0EFF4;
+}
+
+/* line 674, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column .layout-builder__add-block[data-layout-builder-highlight-id^="block-"] {
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+/* line 678, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+#layout-builder.layout-builder .layout-builder__section .layout-builder__layout .lc-inline_container-section-edit .lc-container-cols .layoutcomponent-column .layout-builder__add-block.is-layout-builder-highlighted {
+  border: 2px solid #0196CE;
+}
+
+/* line 690, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+div.contextual {
+  top: 50px !important;
+}
+
+/* line 695, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog-off-canvas #drupal-off-canvas {
+  overflow-x: visible !important;
+}
+
+/* line 701, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-tooltip {
+  border: 2px solid #F0F7FA !important;
+  background-color: #02202B !important;
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: 500;
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+
+/* line 712, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog {
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 721, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .lc-lateral-info:after {
+  cursor: pointer;
+  font-size: 18px;
+  content: "\f05a";
+  color: #b2d3f3;
+  font-family: FontAwesome;
+  display: inline-block;
+  line-height: 18px;
+}
+
+/* line 732, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .ui-dialog-buttonpane {
+  color: #02202B;
+  font-weight: 700;
+}
+
+/* line 735, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .ui-dialog-buttonpane .btn-primary {
+  background: #005574;
+  border-color: #005574;
+}
+
+/* line 738, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .ui-dialog-buttonpane .btn-primary:hover {
+  background: #0077A2;
+}
+
+/* line 744, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas {
+  background: none;
+  box-shadow: none;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* line 750, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
+  background: #0077A2 !important;
+  color: #E0EFF4;
+  border-bottom: none !important;
+  font-size: 14px;
+}
+
+/* line 756, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar:hover {
+  color: white;
+}
+
+/* line 760, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  background-image: none;
+}
+
+/* line 763, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+  background-image: none;
+  border: none;
+}
+
+/* line 767, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-titlebar-close:after {
+  content: "\f00d";
+  font-size: 14px;
+  margin-right: 5px;
+  color: white;
+}
+
+/* line 776, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar span {
+  font-size: 1.1em;
+  font-weight: 200;
+  border: 0;
+}
+
+/* line 781, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar .ui-dialog-title {
+  max-width: none !important;
+  font-weight: 700;
+}
+
+/* line 791, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content {
+  border: 1px solid #02202B !important;
+  color: #02202B;
+}
+
+/* line 796, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content input[type="text"] {
+  background: white;
+  color: #02202B;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  line-height: normal;
+  border: 1px solid #0077A2;
+  box-shadow: none;
+  letter-spacing: normal;
+  border-radius: 4px;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  transition: .2s ease;
+}
+
+/* line 812, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content input[type="text"]:focus {
+  outline-color: none;
+}
+
+/* line 819, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form {
+  color: #02202B;
+}
+
+/* line 822, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form p {
+  color: #02202B;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* line 828, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul {
+  list-style: none;
+}
+
+/* line 830, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul:focus {
+  border: none;
+  outline: none;
+}
+
+/* line 834, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li {
+  margin: 0;
+  padding: 20px;
+}
+
+/* line 837, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li:focus {
+  border: none;
+  outline: none;
+}
+
+/* line 842, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li .form-item {
+  color: #02202B;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* line 848, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li .form-item label {
+  font-size: 700 !important;
+}
+
+/* line 852, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li .form-item .description {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0px;
+}
+
+/* line 860, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul li .form-item .field--type-image .image-widget-data .js-form-required {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* line 868, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul input {
+  margin-left: 0px;
+}
+
+/* line 870, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul input.btn-primary {
+  background: #005574;
+  border-color: #005574;
+}
+
+/* line 873, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .js-media-library-add-form .item-list ul input.btn-primary:hover {
+  background: #0077A2;
+}
+
+/* line 884, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .form-type-checkbox {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* line 890, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .form-type-checkbox:hover .media-library-item {
+  border: #00BAFF;
+}
+
+/* line 898, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-content .views-form table {
+  border: 1px solid #005574;
+  border-radius: 4px;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+/* line 904, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-content .views-form table thead {
+  color: white;
+  background: #02202B;
+  font-weight: 700;
+}
+
+/* line 915, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-content .views-form .media-library-item {
+  border: 4px solid #E0EFF4;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* line 921, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-content .views-form .media-library-item img {
+  position: relative;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* line 929, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-content .views-form .media-library-item .media-library-item__attributes .media-library-item__name {
+  position: relative;
+  float: left;
+  color: #02202B;
+  font-weight: 500;
+  margin: 5px 0px;
+  width: 100%;
+}
+
+/* line 951, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-filters .form--inline {
+  color: #02202B;
+}
+
+/* line 954, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-filters .form--inline .btn-primary {
+  margin-top: 48px;
+  background: #005574;
+  font-weight: 700;
+  border: none;
+}
+
+/* line 959, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-filters .form--inline .btn-primary:hover {
+  background: #0077A2;
+}
+
+/* line 966, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-header .views-display-link {
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: #005574;
+  color: white;
+}
+
+/* line 971, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .views-element-container .view-header .views-display-link:hover {
+  background: #0077A2;
+}
+
+/* line 978, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .form-item-upload {
+  color: #02202B;
+}
+
+/* line 981, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .form-item-upload .description {
+  font-weight: 500;
+}
+
+/* line 986, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-widget-content .form-item-upload .form-control {
+  border: none;
+  margin-left: 0;
+  padding: 0;
+  color: #02202B;
+}
+
+/* line 996, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .ui-dialog-titlebar {
+  background: #013D55 !important;
+  color: white !important;
+  color: #02202B;
+}
+
+/* line 1002, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:after {
+  content: "\f00d";
+  font-size: 14px;
+  margin-right: 5px;
+  color: white;
+}
+
+/* line 1017, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
+  width: 75% !important;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* line 1024, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-off-canvas.ui-dialog-position-side {
+  width: 25% !important;
+  left: 75% !important;
+}
+
+/* line 1036, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas {
+  background: #02202B;
+  padding: 0px !important;
+}
+
+/* line 1043, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas th:first-child, .ui-dialog #drupal-off-canvas td:first-child {
+  width: auto;
+}
+
+/* line 1048, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas p {
+  position: relative;
+  float: left;
+  margin: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* line 1054, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas p a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* line 1062, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-required .lc-lateral-info:after {
+  margin-left: 5px;
+}
+
+/* line 1068, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-builder-add-block .label {
+  margin-bottom: 10px !important;
+}
+
+/* line 1075, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas tbody .tabledrag-hide .form-item {
+  margin: 0;
+}
+
+/* line 1083, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas tr td abbr {
+  background: transparent;
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+/* line 1092, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button.link {
+  display: inline;
+  transition: color 0.5s ease;
+  color: #E0EFF4;
+  background: transparent;
+  font-size: 14px;
+  margin: 10px 20px;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* line 1101, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button.link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* line 1105, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button.link:focus {
+  text-decoration: underline;
+  color: white;
+}
+
+/* line 1114, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .sliderwidget {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* line 1121, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .sliderwidget .sliderwidget-container {
+  position: relative;
+  float: left;
+  width: 100%;
+  background: #013D55;
+}
+
+/* line 1128, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .sliderwidget .sliderwidget-event-field-container {
+  display: none;
+}
+
+/* line 1131, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .sliderwidget .sliderwidget-display-values-field {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* line 1137, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .sliderwidget .lc-range-slide {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+/* line 1144, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .ui-state-default,
+.ui-dialog #drupal-off-canvas .ui-widget-content .ui-state-default,
+.ui-dialog #drupal-off-canvas .ui-widget-header .ui-state-default {
+  color: #0077A2;
+  border: 1px solid #E0EFF4;
+  background: #00BAFF;
+  top: -3px;
+}
+
+/* line 1153, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .lc-range-slide {
+  background: #013D55;
+}
+
+/* line 1157, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item {
+  width: calc(100% - 40px);
+  margin: 20px;
+  font-size: 14px;
+}
+
+/* line 1164, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item.form-type-checkbox input {
+  position: relative;
+  float: left;
+}
+
+/* line 1168, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item.form-type-checkbox label {
+  position: relative;
+  float: left;
+  width: calc(100% - 30px);
+  margin-left: 10px;
+}
+
+/* line 1176, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item .form-item {
+  width: 100%;
+  margin: 0px;
+}
+
+/* line 1181, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item label {
+  position: relative;
+  float: left;
+  font-weight: 500;
+  font-size: 14px;
+  width: inherit;
+  margin-bottom: 5px;
+}
+
+/* line 1191, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item .description {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #E0EFF4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* line 1201, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item.form-type-radio {
+  margin: 5px 0px;
+}
+
+/* line 1205, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item select, .ui-dialog #drupal-off-canvas .form-item input[type='checkbox'], .ui-dialog #drupal-off-canvas .form-item input[type='radio'] {
+  cursor: pointer;
+  margin: 0;
+}
+
+/* line 1208, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item select label, .ui-dialog #drupal-off-canvas .form-item input[type='checkbox'] label, .ui-dialog #drupal-off-canvas .form-item input[type='radio'] label {
+  cursor: pointer;
+}
+
+/* line 1213, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item .webform-element-description {
+  background: transparent;
+  color: white;
+  border-radius: 4px;
+}
+
+/* line 1218, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item .webform-element-description pre {
+  background: white;
+  color: #02202B;
+}
+
+/* line 1224, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item input, .ui-dialog #drupal-off-canvas .form-item select, .ui-dialog #drupal-off-canvas .form-item textarea, .ui-dialog #drupal-off-canvas .form-item input[type="number"] {
+  font-size: 1em;
+  color: #02202B;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* line 1231, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item input:focus, .ui-dialog #drupal-off-canvas .form-item select:focus, .ui-dialog #drupal-off-canvas .form-item textarea:focus, .ui-dialog #drupal-off-canvas .form-item input[type="number"]:focus {
+  border-color: #0196CE;
+  box-shadow: none !important;
+}
+
+/* line 1236, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-item input::placeholder, .ui-dialog #drupal-off-canvas .form-item input:-ms-input-placeholder, .ui-dialog #drupal-off-canvas .form-item select::placeholder, .ui-dialog #drupal-off-canvas .form-item select:-ms-input-placeholder, .ui-dialog #drupal-off-canvas .form-item textarea::placeholder, .ui-dialog #drupal-off-canvas .form-item textarea:-ms-input-placeholder, .ui-dialog #drupal-off-canvas .form-item input[type="number"]::placeholder, .ui-dialog #drupal-off-canvas .form-item input[type="number"]:-ms-input-placeholder {
+  color: #0077A2 !important;
+}
+
+/* line 1243, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas::-webkit-scrollbar-thumb {
+  background-color: #0077A2;
+  outline: 1px solid #0077A2;
+}
+
+/* line 1248, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-icon__region {
+  fill: #F0F7FA;
+  stroke: #E0EFF4;
+}
+
+/* line 1254, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas input[type="submit"].button {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  border: none;
+  background: #0077A2;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+}
+
+/* line 1268, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas input[type="submit"].button:hover {
+  background: #0196CE;
+}
+
+/* line 1273, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas::-webkit-scrollbar {
+  width: 1em;
+}
+
+/* line 1277, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-create-button {
+  padding: 10px 45px !important;
+  margin: 0;
+  font-weight: 700;
+  border-bottom: 1px solid #005574;
+  border-top: 1px solid #005574;
+}
+
+/* line 1285, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-create-button:hover {
+  background-color: #005574;
+}
+
+/* line 1290, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: #02202B;
+}
+
+/* line 1295, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-type-search {
+  margin: 10px;
+  width: calc(100% - 20px);
+  background: #02202B;
+}
+
+/* line 1302, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-type-search input.js-layout-builder-filter.form-search {
+  font-size: 1em;
+  color: #02202B;
+}
+
+/* line 1306, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-type-search input.js-layout-builder-filter.form-search:focus {
+  border-color: #0196CE;
+  box-shadow: none !important;
+}
+
+/* line 1310, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-type-search input.js-layout-builder-filter.form-search::placeholder, .ui-dialog #drupal-off-canvas .form-type-search input.js-layout-builder-filter.form-search:-ms-input-placeholder {
+  color: #0077A2 !important;
+}
+
+/* line 1318, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a[data-drupal-selector*="back"] {
+  position: relative;
+  float: left;
+  display: inline-block;
+  font-weight: 800;
+  border: none;
+  background: #ef5555;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  width: calc(50% - 20px);
+  margin: 20px 20px 0px 20px;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+  text-align: center;
+}
+
+/* line 1334, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a[data-drupal-selector*="back"]:hover {
+  background: #D93030;
+}
+
+/* line 1337, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a[data-drupal-selector*="back"]:before {
+  content: "\f30a";
+  font-family: FontAwesome;
+  font-size: 14px;
+  margin-right: 5px;
+  color: white;
+}
+
+/* line 1346, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .color_field_widget_box__square, .ui-dialog #drupal-off-canvas .color_field_widget_box__square--transparent {
+  width: 30px;
+  height: 31px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+/* line 1351, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .color_field_widget_box__square.active, .ui-dialog #drupal-off-canvas .color_field_widget_box__square--transparent.active {
+  border: 2px solid white;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 1359, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="submit"] {
+  background-color: #0196CE;
+  width: 25%;
+  margin-top: 10px;
+}
+
+/* line 1365, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a[data-drupal-selector="edit-cancel"] {
+  margin-top: 10px;
+}
+
+/* line 1369, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"] {
+  padding: 5px;
+  font-weight: normal;
+  font-size: 0.7em;
+}
+
+/* line 1373, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"]:before {
+  content: "\f2ed";
+  font-family: FontAwesome;
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+/* line 1381, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[name^="image-media-library-update-"], .ui-dialog #drupal-off-canvas div[id^="image-media-library-wrapper-"] {
+  display: none;
+}
+
+/* line 1385, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"], .ui-dialog #drupal-off-canvas a[data-drupal-selector*="cancel"] {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  border: none;
+  background: #ef5555;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  width: calc(100% - 40px);
+  margin: 20px 20px 0px 20px;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+}
+
+/* line 1399, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"]:focus, .ui-dialog #drupal-off-canvas a[data-drupal-selector*="cancel"]:focus {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #D93030;
+}
+
+/* line 1404, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="remove-button"]:hover, .ui-dialog #drupal-off-canvas a[data-drupal-selector*="cancel"]:hover {
+  background: #D93030;
+}
+
+/* line 1410, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .color-field-widget-box-form {
+  margin: 0px 20px;
+}
+
+/* line 1414, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="submit"] {
+  display: inline-block;
+  font-weight: 800;
+  border: none;
+  background: #0196CE;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  width: calc(100% - 40px);
+  margin: 20px 20px 0px 20px;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+}
+
+/* line 1427, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="submit"]:focus {
+  outline: 2px dotted transparent;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #D93030;
+}
+
+/* line 1432, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas button[data-drupal-selector*="submit"]:hover {
+  background: #D93030;
+}
+
+/* line 1437, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset {
+  width: 100%;
+}
+
+/* line 1443, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset .media-library-form-element input.js-media-library-open-button {
+  width: 80%;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+/* line 1451, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset .media-library-form-element p.media-library-form-element-empty-text {
+  margin: 10px 20px;
+}
+
+/* line 1457, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset div[id*="--description"] {
+  margin-left: 20px;
+  font-weight: 600;
+  color: #02202B;
+  line-height: 1.5em;
+  font-size: 14px;
+  pointer-events: none;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* line 1468, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset div.form-inline, .ui-dialog #drupal-off-canvas fieldset div.jquery_colorpicker, .ui-dialog #drupal-off-canvas fieldset div.color-field-widget-box-form {
+  width: 90%;
+  margin: 15px 20px 30px 20px;
+}
+
+/* line 1473, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset div.js-form-type-checkbox .checkbox {
+  margin: 5px 0 15px 0;
+  position: initial;
+}
+
+/* line 1476, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset div.js-form-type-checkbox .checkbox small {
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+/* line 1483, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset div.color-field-widget-box-form {
+  margin: 0px;
+}
+
+/* line 1490, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-search .form-type-search:before {
+  content: "\f002";
+  font-size: 25px;
+  display: inline-table;
+  margin: 0 auto;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+/* line 1503, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.media-library-form-element {
+  display: contents;
+}
+
+/* line 1507, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset select, .ui-dialog #drupal-off-canvas fieldset .form-select, .ui-dialog #drupal-off-canvas fieldset input[type="number"], .ui-dialog #drupal-off-canvas fieldset input[type="text"] {
+  background: white;
+  color: #02202B;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  line-height: normal;
+  border: 1px solid #0077A2;
+  box-shadow: none;
+  letter-spacing: normal;
+  border-radius: 4px;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  transition: .2s ease;
+}
+
+/* line 1525, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset select option {
+  color: #02202B;
+}
+
+/* line 1531, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset select.form-select.tabs {
+  display: inline-block;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  padding: 4px;
+}
+
+/* line 1538, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset select.form-select.tabs option {
+  display: inline-block;
+  width: auto;
+  float: left;
+  border: 2px solid #f2f2f2;
+  padding: 8px;
+  margin: 1px 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+/* line 1552, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset input .form-date, .ui-dialog #drupal-off-canvas fieldset input .form-time {
+  background: #f2f2f2;
+  color: #02202B;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+  line-height: normal;
+  border: 1px solid #02202B;
+  box-shadow: none;
+  letter-spacing: normal;
+}
+
+/* line 1568, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.sliderwidget {
+  width: 100%;
+  padding: 5px;
+  margin-top: 0;
+}
+
+/* line 1574, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.ui-slider-horizontal {
+  background: #f2f2f2;
+}
+
+/* line 1577, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.ui-slider-horizontal > span {
+  background: #02202B;
+}
+
+/* line 1582, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.sliderwidget-display-values-field {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  background: #f2f2f2;
+  margin: 5px auto;
+  color: #02202B;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: none;
+  line-height: normal;
+  border: 1px solid #02202B;
+  box-shadow: none;
+  letter-spacing: normal;
+}
+
+/* line 1600, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas fieldset.js-form-type-slider div.sliderwidget-event-field-container {
+  display: none;
+}
+
+/* line 1608, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-type-checkbox .description {
+  margin-left: 0px;
+}
+
+/* line 1619, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .edit-settings-formatter-third-party-settings-linked-field-destination-field-message {
+  margin: 20px;
+  border-color: white;
+  font-weight: 500;
+}
+
+/* line 1625, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-composite > legend, .ui-dialog #drupal-off-canvas .label {
+  font-weight: 500;
+}
+
+/* line 1630, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas span .fieldset-legend {
+  margin: 0px 20px;
+}
+
+/* line 1633, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas span .fieldset-legend span.lc-lateral-title {
+  position: relative;
+  float: left;
+  color: white;
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0px 5px 5px 0px;
+}
+
+/* line 1644, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas span .fieldset-legend span.lc-lateral-info:after {
+  margin: 0px 5px 5px 0px;
+  line-height: 18px;
+}
+
+/* line 1653, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 1659, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas label.js-form-type-checkbox {
+  display: inline-block;
+  background: transparent;
+  color: #005574;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 18px;
+}
+
+/* line 1669, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas label.js-form-type-checkbox span.lc-lateral-info:after {
+  cursor: pointer;
+  font-size: 18px;
+  content: "\f05a";
+  color: #b2d3f3;
+  display: inline-block;
+  line-height: 18px;
+}
+
+/* line 1683, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas select[multiple] {
+  padding: 0;
+  overflow: scroll;
+}
+
+/* line 1690, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas form.layout-builder-section-move .table {
+  margin: 0;
+}
+
+/* line 1698, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .table-responsive > span.lc-lateral-title {
+  position: relative;
+  float: left;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0px 5px 5px 0px;
+}
+
+/* line 1711, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas label[for^="edit-settings-block-"] {
+  margin: 0 5px 5px 0px;
+}
+
+/* line 1715, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas label[for^="edit-settings-block-"] > span .lc-lateral-title {
+  color: white;
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0px 5px 5px 0px;
+}
+
+/* line 1725, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas label[for^="edit-settings-block-"] > span.lc-lateral-info:after {
+  cursor: pointer;
+  font-size: 18px;
+  content: "\f05a";
+  color: #b2d3f3;
+  display: inline-block;
+  margin-right: 5px;
+  line-height: 18px;
+}
+
+/* line 1744, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div button.color_field_widget_box__square.active:before {
+  content: "\f00c";
+  font-size: 14px;
+  color: white;
+}
+
+/* line 1754, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.js-media-library-item {
+  padding-left: 15px;
+  width: 100%;
+}
+
+/* line 1759, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.color-field-widget-box-form > button {
+  margin: 5px;
+  border: 1px solid #f2f2f2;
+}
+
+/* line 1767, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.media-library-item button.media-library-item__remove {
+  background-color: #ef5555;
+  border: 0;
+  border-radius: 0;
+  color: white;
+  display: flow-root;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 0.7em;
+}
+
+/* line 1776, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.media-library-item button.media-library-item__remove:before {
+  content: "\f2ed";
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+/* line 1787, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.layout_builder__add-section-confirm, .ui-dialog #drupal-off-canvas div.layout_builder__remove-description {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+/* line 1798, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.details-wrapper span.lc-lateral-title {
+  color: white;
+  position: relative;
+  float: left;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0px 5px 5px 0px;
+}
+
+/* line 1812, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.details-wrapper div.horizontal-tabs > ul {
+  margin: -6px 0 15px 0;
+  display: flex;
+}
+
+/* line 1819, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs {
+  border: none;
+  background: none;
+  color: #444;
+  padding: 0;
+}
+
+/* line 1824, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul {
+  color: white;
+  background: #02202B;
+}
+
+/* line 1827, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul li {
+  text-align: center;
+  color: white;
+  background: #005574;
+}
+
+/* line 1832, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul li.selected {
+  background: #013D55;
+}
+
+/* line 1836, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul li:hover {
+  background: #0077A2;
+}
+
+/* line 1840, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul li a {
+  padding: 11px;
+  font-size: 17px;
+}
+
+/* line 1845, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.horizontal-tabs ul li a, .ui-dialog #drupal-off-canvas div.horizontal-tabs ul li strong {
+  color: white;
+  background: transparent;
+}
+
+/* line 1859, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.block-categories.js-layout-builder-categories details ul.links li {
+  padding: 5px 20px;
+}
+
+/* line 1861, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.block-categories.js-layout-builder-categories details ul.links li a {
+  color: #E0EFF4;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* line 1867, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas div.block-categories.js-layout-builder-categories details ul.links li a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* line 1880, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .lc-lateral-regions {
+  margin-top: 7px;
+}
+
+/* line 1885, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .components-title {
+  margin: 20px 0;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 1890, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .customblock-menuitem-modal {
+  background-image: url(../../../misc/icons/bebebe/plus.svg) transparent 16px no-repeat;
+  background-color: #013D55;
+}
+
+/* line 1894, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .customblock-menuitem-modal:hover {
+  background-color: #005574;
+}
+
+/* line 1899, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .components-title {
+  margin: 20px 0;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 1906, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a:visited, .ui-dialog #drupal-off-canvas a:hover, .ui-dialog #drupal-off-canvas a:active, .ui-dialog #drupal-off-canvas a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 1910, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas a .inline-block-create-button, .ui-dialog #drupal-off-canvas a .inline-block-list__item {
+  margin: 0;
+  color: white;
+  font-size: 1em;
+}
+
+/* line 1917, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .text-format-wrapper {
+  padding: 20px;
+  border: 1px solid #0077A2;
+  border-radius: 4px;
+}
+
+/* line 1924, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .text-format-wrapper .filter-wrapper {
+  border: none;
+  padding: 0;
+}
+
+/* line 1927, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .text-format-wrapper .filter-wrapper .filter-help {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 14px;
+}
+
+/* line 1941, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .form-item input[type='checkbox'] {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 1948, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .form-inline {
+  margin: 0px;
+  width: 100%;
+}
+
+/* line 1953, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper {
+  border: 1px solid #0077A2;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+/* line 1960, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper select option {
+  color: white;
+  padding: 5px 0px;
+}
+
+/* line 1966, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .tabledrag-toggle-weight-wrapper {
+  padding-top: 0px;
+}
+
+/* line 1970, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+}
+
+/* line 1978, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .form-type-select {
+  margin-right: 10px;
+}
+
+/* line 1982, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .btn-success {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  border: none;
+  box-shadow: inset 0px 0px 0px 2px white;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  width: auto;
+  margin: 5px 0px;
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 1999, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .btn-success:hover {
+  box-shadow: inset 0px 0px 0px 4px white;
+}
+
+/* line 2005, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .form-wrapper {
+  background: transparent;
+}
+
+/* line 2008, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .form-wrapper input[type="submit"] {
+  width: auto;
+  margin: 10px 0px;
+}
+
+/* line 2014, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .form-item label {
+  margin-top: 10px;
+}
+
+/* line 2019, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table .details-wrapper label {
+  margin: 0px;
+}
+
+/* line 2024, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table th {
+  border-bottom: 1px solid white !important;
+}
+
+/* line 2027, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table td {
+  margin: 10px;
+}
+
+/* line 2029, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table td.inline-entity-form-block_content-label {
+  margin: 10px;
+  position: relative;
+  float: left;
+}
+
+/* line 2035, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tr {
+  margin-top: 10px;
+}
+
+/* line 2036, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tr.drag-previous td {
+  background: transparent;
+}
+
+/* line 2041, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table thead {
+  border-bottom: 1px solid white;
+}
+
+/* line 2044, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tbody {
+  border-bottom: 1px solid white;
+}
+
+/* line 2046, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tbody tr {
+  padding: 0;
+}
+
+/* line 2049, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tbody tr:hover td {
+  background: transparent;
+}
+
+/* line 2053, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper table tbody tr td {
+  border: 0;
+  padding: 0;
+}
+
+/* line 2061, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper p {
+  margin: 10px 0px;
+}
+
+/* line 2065, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper button.link {
+  margin: 10px 0px;
+}
+
+/* line 2069, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .js-media-library-item {
+  padding: 0px;
+}
+
+/* line 2073, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .description {
+  margin-left: 0;
+}
+
+/* line 2077, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .media-library-item__preview {
+  margin: 20px 0px;
+}
+
+/* line 2083, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .media-library-item__attributes {
+  margin: 20px 0px;
+}
+
+/* line 2085, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .media-library-item__attributes .media-library-item__name {
+  font-weight: 500;
+}
+
+/* line 2090, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper input {
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 14px;
+}
+
+/* line 2097, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper .fieldset-wrapper .field-prefix {
+  font-weight: 500;
+}
+
+/* line 2103, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper ul {
+  border: none;
+  margin: 0;
+}
+
+/* line 2110, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper div.js-form-item .js-form-type-checkbox .checkbox .form-check {
+  border-bottom: 1px solid gray;
+  margin: 5px -20px 5px -20px;
+  padding: 0;
+}
+
+/* line 2114, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper div.js-form-item .js-form-type-checkbox .checkbox .form-check label {
+  display: inline-block;
+}
+
+/* line 2117, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper div.js-form-item .js-form-type-checkbox .checkbox .form-check small {
+  display: block;
+}
+
+/* line 2128, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .details-wrapper div.js-form-item .js-form-type-checkbox .checkbox .form-check {
+  border-bottom: 1px solid gray;
+  margin: 5px -20px 5px -20px;
+}
+
+/* line 2140, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item {
+  width: 100%;
+  display: inline-grid;
+  text-align: center;
+  margin: 0;
+  padding: 15px 25px 15px 25px;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* line 2148, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item:hover {
+  opacity: 1;
+  color: white;
+}
+
+/* line 2151, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item:hover:before {
+  transform: scale(1.2);
+}
+
+/* line 2156, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item li a {
+  transition: all 0.1s linear;
+}
+
+/* line 2158, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item li a:hover {
+  transform: scale(1.1);
+}
+
+/* line 2167, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .lc-inline_block_iframe-iframe-edit {
+  border: none !important;
+}
+
+/* line 2171, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details {
+  margin: 0;
+  width: 100%;
+  float: left;
+  padding: 0;
+}
+
+/* line 2178, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details[open] > summary {
+  background: #013D55;
+  color: white;
+}
+
+/* line 2181, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details[open] > summary:focus {
+  outline: none;
+  border: none;
+}
+
+/* line 2185, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details[open] > summary:hover {
+  background: #005574;
+}
+
+/* line 2191, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details > summary {
+  float: left;
+  padding: 10px 20px;
+  margin: 0;
+  width: 100%;
+  font-weight: 700;
+  border-bottom: 1px solid #005574;
+  border-top: 1px solid #005574;
+  background: #013D55;
+  font-size: 14px;
+}
+
+/* line 2203, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details > summary:hover {
+  background-color: #005574;
+}
+
+/* line 2207, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details .details-wrapper {
+  padding: 0px !important;
+  width: 100%;
+  float: left;
+  margin: 0;
+  margin-top: 0px;
+}
+
+/* line 2217, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details .details-wrapper .media-library-form-element legend .fieldset-legend .lc-lateral-title {
+  position: relative;
+  float: left;
+  margin: 0px 5px 5px 20px;
+}
+
+/* line 2224, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details .details-wrapper .media-library-form-element .fieldset-wrapper {
+  margin: 20px;
+}
+
+/* line 2230, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas details .details-wrapper .details-description {
+  margin: 20px;
+  color: #E0EFF4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* line 2240, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .form-inline > fieldset {
+  width: auto;
+}
+
+/* line 2245, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-selection li {
+  width: 50%;
+  display: inline-grid;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  text-decoration: none;
+  opacity: 0.85;
+  flex-basis: 50%;
+}
+
+/* line 2255, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-selection li:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  color: white;
+}
+
+/* line 2261, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-selection li a {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 10px;
+  transition: all 0.1s linear;
+}
+
+/* line 2267, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-selection li a div {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* line 2273, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .layout-selection li a:hover {
+  transform: scale(1.05);
+}
+
+/* line 2281, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ol li {
+  flex-basis: 50%;
+}
+
+/* line 2288, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas svg .layout-icon + div {
+  color: #005574;
+}
+
+/* line 2291, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas svg .layout-icon g rect {
+  fill: #005574;
+}
+
+/* line 2297, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul {
+  margin: 0;
+  font-weight: 700;
+  background: #005574;
+}
+
+/* line 2303, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.links {
+  background: transparent;
+  margin-top: 10px;
+}
+
+/* line 2306, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.links li {
+  background: transparent;
+}
+
+/* line 2311, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.inline-block-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* line 2316, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul li {
+  flex-basis: 50%;
+  background: #005574;
+}
+
+/* line 2320, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul li a {
+  color: white !important;
+  font-weight: 700;
+  background: transparent;
+}
+
+/* line 2326, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul li a.inline-block-list__item:hover {
+  background-color: #0077A2;
+}
+
+/* line 2330, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul li a.inline-block-list__item:before {
+  content: "\f00d";
+  color: white;
+  font-size: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 2343, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.layout-selection.list-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* line 2345, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.layout-selection.list-group li a {
+  color: transparent;
+}
+
+/* line 2352, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.layout-selection * {
+  background: none;
+}
+
+/* line 2354, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.layout-selection *:not(div) {
+  background: none;
+}
+
+/* line 2356, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas ul.layout-selection *:not(div) option {
+  color: #555;
+}
+
+/* line 2363, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas .logo {
+  margin: 0 0 20px 0;
+}
+
+/* line 2367, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas form {
+  width: 100%;
+  float: left;
+}
+
+/* line 2372, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas form.layout-builder-section-move .table thead tr th, .ui-dialog #drupal-off-canvas form.layout-builder-section-move .table tbody tr td {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 20px;
+  line-height: 20px;
+  border-bottom: 1px solid #005574;
+  border-top: 1px solid #005574;
+}
+
+/* line 2383, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas form.layout-builder-section-move .table tbody tr td {
+  padding: 15px 20px;
+  margin: 0;
+  font-weight: 500;
+  border-bottom: 1px solid #005574;
+  border-top: 1px solid #005574;
+  color: white;
+  background: #013D55;
+}
+
+/* line 2393, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.ui-dialog #drupal-off-canvas form.layout-builder-section-move .table tbody tr.drag-previous td, .ui-dialog #drupal-off-canvas form.layout-builder-section-move .table tr td:hover {
+  background-color: #005574;
+}
+
+/* line 2406, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+div.ui-widget.ui-dialog.ui-dialog-off-canvas {
+  border: 1px solid #cdd1d5;
+}
+
+/* line 2414, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+div#drupal-off-canvas *,
+div#drupal-off-canvas details,
+div#drupal-off-canvas div.details-wrapper,
+div#drupal-off-canvas fieldset label,
+div#drupal-off-canvas *:not(div) {
+  color: white;
+  background: #02202B;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* line 2427, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-region {
+  width: 100%;
+}
+
+/* line 2432, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.simple-margin-none, .lc-section.simple-margin-small, .lc-section.simple-margin-medium, .lc-section.simple-margin-large {
+  clear: both;
+}
+
+/* line 2436, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.simple-margin-none {
+  margin-top: 0px;
+}
+
+/* line 2440, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.simple-margin-small {
+  margin-top: 10px;
+}
+
+/* line 2444, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.simple-margin-medium {
+  margin-top: 30px;
+}
+
+/* line 2448, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.simple-margin-large {
+  margin-top: 60px;
+}
+
+/* line 2452, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.full-height-wrapper {
+  height: 100vh;
+}
+
+/* line 2456, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section.medium-height-wrapper {
+  height: 50vh;
+}
+
+/* line 2463, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .lc-container-cols .lc-column-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* line 2467, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .lc-container-cols .lc-column-title.border-type-left {
+  border-left: 10px solid;
+}
+
+/* line 2470, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .lc-container-cols .lc-column-title.border-type-right {
+  border-right: 10px solid;
+}
+
+/* line 2473, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .lc-container-cols .lc-column-title.border-type-top {
+  border-top: 5px solid;
+}
+
+/* line 2476, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .lc-container-cols .lc-column-title.border-type-bottom {
+  border-bottom: 5px solid;
+}
+
+/* line 2481, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.lc-section .field__item img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 2488, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.colorpicker {
+  z-index: 1000;
+}
+
+/* line 2491, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.info {
+  margin-right: 10px;
+}
+
+/* line 2494, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.element-hidden {
+  display: none;
+}
+
+/* line 2497, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+.parallax-mirror {
+  z-index: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+  /* line 2518, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+  .lc {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  /* line 2537, Z:/lc/html/web/modules/custom/layoutcomponents/scss/lc-color-light.scss */
+  #drupal-off-canvas .layout-selection li {
+    flex-basis: 100%;
+  }
+}
+
+/*# sourceMappingURL=lc-color-light.css.map */

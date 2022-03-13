@@ -1,0 +1,55 @@
+uuid: 6791b263-3442-4ecf-931f-a2d604f7cce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.field.block_content.simple_button.field_sb_align
+    - field.field.block_content.simple_button.field_sb_background_color
+    - field.field.block_content.simple_button.field_sb_border_color
+    - field.field.block_content.simple_button.field_sb_border_size
+    - field.field.block_content.simple_button.field_sb_border_type
+    - field.field.block_content.simple_button.field_sb_extra_attributes
+    - field.field.block_content.simple_button.field_sb_extra_class
+    - field.field.block_content.simple_button.field_sb_margin_bottom
+    - field.field.block_content.simple_button.field_sb_margin_top
+    - field.field.block_content.simple_button.field_sb_padding_bottom
+    - field.field.block_content.simple_button.field_sb_padding_top
+    - field.field.block_content.simple_button.field_sb_title_color
+    - field.field.block_content.simple_button.field_sb_title_size
+    - field.field.block_content.simple_button.field_sb_url
+    - field.field.block_content.simple_button.field_sb_width
+  module:
+    - link
+id: block_content.simple_button.default
+targetEntityType: block_content
+bundle: simple_button
+mode: default
+content:
+  field_sb_url:
+    type: link
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden:
+  field_sb_align: true
+  field_sb_background_color: true
+  field_sb_border_color: true
+  field_sb_border_size: true
+  field_sb_border_type: true
+  field_sb_extra_attributes: true
+  field_sb_extra_class: true
+  field_sb_margin_bottom: true
+  field_sb_margin_top: true
+  field_sb_padding_bottom: true
+  field_sb_padding_top: true
+  field_sb_title_color: true
+  field_sb_title_size: true
+  field_sb_width: true

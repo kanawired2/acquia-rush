@@ -1,0 +1,23 @@
+uuid: 1ab8f5d6-1bf3-45fa-85de-0c697c9b01d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_align
+  module:
+    - options
+id: block_content.simple_image.field_si_align
+field_name: field_si_align
+entity_type: block_content
+bundle: simple_image
+label: Align
+description: 'Set the align of this image'
+required: false
+translatable: false
+default_value:
+  -
+    value: justify-content-start
+default_value_callback: ''
+settings: {  }
+field_type: list_string

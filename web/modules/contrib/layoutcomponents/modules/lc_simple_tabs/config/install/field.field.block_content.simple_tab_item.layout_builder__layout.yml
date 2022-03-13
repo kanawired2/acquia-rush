@@ -1,0 +1,21 @@
+uuid: 1b60d3ec-348d-406b-80a0-839ad8f93781
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tab_item
+    - field.storage.block_content.layout_builder__layout
+  module:
+    - layout_builder
+id: block_content.simple_tab_item.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: block_content
+bundle: simple_tab_item
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

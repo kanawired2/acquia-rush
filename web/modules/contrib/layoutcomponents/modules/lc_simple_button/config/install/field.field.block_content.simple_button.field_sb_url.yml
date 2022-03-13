@@ -1,0 +1,25 @@
+uuid: 7a9a01f0-06b6-48be-a0e1-101d9d0b90a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_url
+  module:
+    - link
+_core:
+  default_config_hash: Zt1_eZUjxVo-38tAE3uNkm7l0hEMv1DJ3IJDH4dXSw8
+id: block_content.simple_button.field_sb_url
+field_name: field_sb_url
+entity_type: block_content
+bundle: simple_button
+label: Url
+description: 'Set the destination URL for the button.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

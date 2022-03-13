@@ -1,0 +1,21 @@
+uuid: 273128d8-66a9-4fe6-9325-47b560cf08e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_border_type
+  module:
+    - options
+id: block_content.simple_image.field_si_border_type
+field_name: field_si_border_type
+entity_type: block_content
+bundle: simple_image
+label: Type
+description: 'Set the type of border of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

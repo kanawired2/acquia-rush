@@ -1,0 +1,223 @@
+// out: ../css/lc_simple_accordion.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+/* Media images */
+/* 991px */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-off-canvas.ui-dialog-position-side {
+  width: 25% !important;
+  left: 75% !important;
+}
+#drupal-off-canvas {
+  background: #444;
+  padding: 20px 10px !important;
+  .logo {
+    margin: 0 0 20px 0;
+  }
+  form {
+    width: 100%;
+    float: left;
+  }
+  .inline-block-create-button {
+    padding: 10px 45px !important;
+  }
+  details {
+    margin: 0 !important;
+    width: 100%;
+    float: left;
+    background: #444 !important;
+    padding: 0 5px !important;
+    >summary {
+      background: #000 !important;
+      text-transform: uppercase;
+      padding: 5px 20px !important;
+      margin: 5px 0 !important;
+      width: 100%;
+      float: left;
+    }
+    .details-wrapper {
+      padding: 0 10px !important;
+      background: #444;
+      width: 100%;
+      float: left;
+      margin: 0 !important;
+      fieldset {
+        margin: 5px 0 !important;
+      }
+    }
+  }
+  .layoutcomponents-menuitem-modal {
+    background-image: url(../../../misc/icons/bebebe/plus.svg) transparent 16px no-repeat !important;
+    background-color: #9aae04 !important;
+  }
+  .customblock-menuitem-modal {
+    background-image: url(../../../misc/icons/bebebe/plus.svg) transparent 16px no-repeat !important;
+    background-color: #0589ad !important;
+  }
+  .components-title {
+    margin: 20px 0;
+    border-bottom: 1px solid #fff;
+  }
+  .form-type-search {
+    margin: 0 0 20px;
+  }
+  .details-wrapper {
+    details.js-form-wrapper.form-wrapper {
+      margin: 0 -10px;
+    }
+    fieldset {
+      border-bottom: 1px solid gray;
+      margin: 5px -20px 5px -20px;
+    }
+    div.js-form-item {
+      .js-form-type-checkbox {
+        .checkbox {
+          .form-check {
+            border-bottom: 1px solid gray;
+            margin: 5px -20px 5px -20px;
+          }
+        }
+      }
+    }
+    div.js-form-item.js-form-type-checkbox.checkbox.form-check {
+      padding: 0;
+      label {
+        display: inline-block;
+      }
+      small {
+        display: block;
+      }
+    }
+  }
+  button[data-drupal-selector*="submit"] {
+    background-color: #9aae04;
+    width: 25%;
+    margin-top: 10px;
+  }
+  a[data-drupal-selector="edit-cancel"] {
+    margin-top: 10px;
+  }
+  ul.inline-block-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  ul {
+    li {
+      flex-basis: 50%;
+      a.inline-block-list__item {
+        &:before {
+          content: "\f00d";
+          font-family: FontAwesome;
+          font-size: 60px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  ol {
+    li {
+      flex-basis: 50%;
+    }
+  }
+  .inline-block-list__item.use-ajax.js-layout-builder-block-link.inline-block-list__item {
+    width: 100%;
+    display: inline-grid;
+    text-align: center;
+    margin: 0;
+    padding: 15px 25px 15px 25px;
+    background-color: #444;
+    text-decoration: none;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+.lc-region {
+  width: 100%;
+}
+.lc-section {
+  .lc-container-cols {
+    .block-layoutcomponents-parent {
+      margin: 20px 0 20px;
+    }
+    .lc-column-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 20px 0 20px 0;
+    }
+    .lc-column-title.border-type-left {
+      border-left: 10px solid;
+      padding: 0 0 0 5px;
+    }
+    .lc-column-title.border-type-right {
+      border-right: 10px solid;
+      padding: 0 5px 0 0;
+    }
+    .lc-column-title.border-type-top {
+      border-top: 5px solid;
+      padding: 3px 0 0 0;
+    }
+    .lc-column-title.border-type-bottom {
+      border-bottom: 5px solid;
+      padding: 0 0 3px 0;
+    }
+  }
+  .field__item {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.lc-section.simple-margin-none {
+  margin-top: 0px;
+  clear: both;
+}
+.lc-section.simple-margin-small {
+  margin-top: 10px;
+  clear: both;
+}
+.lc-section.simple-margin-medium {
+  margin-top: 30px;
+  clear: both;
+}
+.lc-section.simple-margin-large {
+  margin-top: 60px;
+  clear: both;
+}
+.lc-section.full-height-wrapper {
+  height: 100vh;
+}
+.lc-section.medium-height-wrapper {
+  height: 50vh;
+}
+.colorpicker {
+  z-index: 1000;
+}
+.info {
+  margin-right: 10px;
+}
+.element-hidden {
+  display: none;
+}
+.parallax-mirror {
+  z-index: 0 !important;
+}
+@media screen and (max-width: 991px) {
+  .lc {
+    width: 100%;
+  }
+}
+@media all and (min-width: 560px) {
+  .node {
+    .field--type-image {
+      margin: 0 0 0 0 !important;
+    }
+  }
+}

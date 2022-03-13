@@ -1,0 +1,22 @@
+uuid: 24eff033-f3ea-4cae-9753-c4542034327e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - color_field
+_core:
+  default_config_hash: bRDGGhaR5uapaSpRBVhyN5fHArLMNfhQfFLL5bM7yAA
+id: block_content.field_sb_title_color
+field_name: field_sb_title_color
+entity_type: block_content
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

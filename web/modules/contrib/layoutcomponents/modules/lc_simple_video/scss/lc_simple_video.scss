@@ -1,0 +1,21 @@
+// out: ../css/lc_simple_video.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+.block--type--simple-video {
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+#drupal-off-canvas {
+  ul {
+    li {
+      a.inline-block-list__item.simple_video {
+        &:before {
+          content: "\f04b";
+          font-family: FontAwesome;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}

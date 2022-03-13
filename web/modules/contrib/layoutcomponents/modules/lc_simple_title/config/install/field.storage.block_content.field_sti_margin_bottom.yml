@@ -1,0 +1,22 @@
+uuid: 017a171a-82e7-4753-80f0-7ad38f428856
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: 8J1S2CMP7r422VMUdETTFudkQ0rEfAMe6SpCRQ90S2E
+id: block_content.field_sti_margin_bottom
+field_name: field_sti_margin_bottom
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

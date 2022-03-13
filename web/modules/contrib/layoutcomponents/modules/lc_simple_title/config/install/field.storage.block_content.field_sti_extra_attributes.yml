@@ -1,0 +1,23 @@
+uuid: 90d8b0f9-7fbb-458e-85a7-730d6df56218
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: wUvYlGpVtQI0qd3CSjM7WSQoS3clxXoSfAR2MSY04Kw
+id: block_content.field_sti_extra_attributes
+field_name: field_sti_extra_attributes
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

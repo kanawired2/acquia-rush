@@ -1,0 +1,10 @@
+uuid: a6779bcc-4adc-4d2c-b3f4-030c507ce56e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Gdef0dQcpXL7uH2UjOZmvyDzvXqcvW63BoqcHuJmWAA
+id: simple_countdown
+label: Countdown
+revision: 1
+description: ''

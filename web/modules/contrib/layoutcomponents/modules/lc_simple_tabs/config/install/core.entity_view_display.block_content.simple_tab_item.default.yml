@@ -1,0 +1,80 @@
+uuid: f2b0095c-25ce-4775-9b6e-31256d0d4507
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tab_item
+    - field.field.block_content.simple_tab_item.field_st_item_anchor
+    - field.field.block_content.simple_tab_item.field_sta_item_title
+    - field.field.block_content.simple_tab_item.layout_builder__layout
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          6604e953-41e9-442a-88df-1bdc49d686aa:
+            uuid: 6604e953-41e9-442a-88df-1bdc49d686aa
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:block_content:simple_tab_item:field_st_item_anchor'
+              formatter:
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 0
+          3eecb8d7-b9bd-42bd-8fab-7ca1d8999109:
+            uuid: 3eecb8d7-b9bd-42bd-8fab-7ca1d8999109
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:block_content:simple_tab_item:field_sta_item_title'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+_core:
+  default_config_hash: DULX3Uh1Czdy33JPeznVWcA7PA0S33zuJnHi2yFBdvU
+id: block_content.simple_tab_item.default
+targetEntityType: block_content
+bundle: simple_tab_item
+mode: default
+content:
+  field_st_item_anchor:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sta_item_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  layout_builder__layout: true

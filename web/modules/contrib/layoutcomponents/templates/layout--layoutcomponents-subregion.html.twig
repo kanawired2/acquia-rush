@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Layout Components - subregion template.
+ *
+ * Available layout variables:
+ * - subregion.type: Wrapper container for the layout subregion.
+ * - attributes: Wrapper attributes for the layout subregion container.
+ * - content: The content to go inside the wrapper for this subregion.
+ */
+#}
+{% set container = subregion.type %}
+{% set attributes = subregion.attributes %}
+<{{ container }}{{ attributes }}>
+{{ content }}
+</{{ container }}>

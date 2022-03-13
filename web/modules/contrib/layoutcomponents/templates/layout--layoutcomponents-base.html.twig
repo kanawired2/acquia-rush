@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Layout Components - base template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ * - container: Container element.
+ * - attributes: Wrapper attributes.
+ * - title: Wrapper title.
+ * - settings: List of columns.
+ *
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+ */
+#}
+{% set section = lc_data.output.section %}
+{% set title = lc_data.output.title %}
+{% set regions = lc_data.output.regions %}
+
+<{{ section.general.basic.section_type }}{{ section.attributes }}>
+  {% if title.general.title %}
+  <div {{ section.title_container_attr }}>
+    <div {{ title.styles.attr_class.container }} {{ title.styles.attr_styles.container }}>
+      <{{ title.styles.design.title_type }} {{ title.styles.attr_class.title }} {{ title.styles.attr_styles.title }}>{{ title.general.title }}</{{ title.styles.design.title_type }}>
+      <p {{ title.styles.attr_class.description }}>{{ title.general.description }}</p>
+    </div>
+  </div>
+  {% endif %}
+  <div {{ section.container }}>
+    {{ title_suffix.contextual_links }}
+    <div {{ section.row }}>
+      {% if section.general.structure.section_carousel == 1 and lc_admin == false %}
+        {{ regions.slick }}
+      {% else %}
+        {% for key, region in regions %}
+            {{ region }}
+        {% endfor %}
+      {% endif %}
+  </div>
+  </div>
+</{{ section.general.basic.section_type }}>

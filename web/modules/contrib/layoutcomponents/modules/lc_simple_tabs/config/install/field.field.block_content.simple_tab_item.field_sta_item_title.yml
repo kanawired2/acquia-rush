@@ -1,0 +1,19 @@
+uuid: 179eeb41-dbe1-41e9-8461-a40a69fe243a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tab_item
+    - field.storage.block_content.field_sta_item_title
+id: block_content.simple_tab_item.field_sta_item_title
+field_name: field_sta_item_title
+entity_type: block_content
+bundle: simple_tab_item
+label: Title
+description: 'Set the title of this tab'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

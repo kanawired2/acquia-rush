@@ -1,0 +1,137 @@
+layoutcomponents.settings_general:
+  path: '/admin/config/layoutcomponents/settings'
+  defaults:
+    _form: '\Drupal\layoutcomponents\Form\LcSettings'
+    _title: 'Layout Components - General'
+  requirements:
+    _permission: 'default lc general settings'
+
+layoutcomponents.interface_settings:
+  path: '/admin/config/layoutcomponents/settings/interface'
+  defaults:
+    _form: '\Drupal\layoutcomponents\Form\LcInterfaceSettings'
+    _title: 'Layout Components - Interface'
+  requirements:
+    _permission: 'default lc interface settings'
+
+layoutcomponents.colors_settings:
+  path: '/admin/config/layoutcomponents/settings/colors'
+  defaults:
+    _form: '\Drupal\layoutcomponents\Form\LcColorsSettings'
+    _title: 'Layout Components - Colors'
+  requirements:
+    _permission: 'default lc colors settings'
+
+layoutcomponents.section_settings:
+  path: '/admin/config/layoutcomponents/settings/section'
+  defaults:
+    _form: '\Drupal\layoutcomponents\Form\LcSectionSettings'
+    _title: 'Layout Components - Section'
+  requirements:
+    _permission: 'default lc section settings'
+
+layoutcomponents.column_settings:
+  path: '/admin/config/layoutcomponents/settings/column'
+  defaults:
+    _form: '\Drupal\layoutcomponents\Form\LcColumnSettings'
+    _title: 'Layout Components - Column'
+  requirements:
+    _permission: 'default lc column settings'
+
+layoutcomponents.update_column:
+  path: '/layout_builder/configure/column/{section_storage_type}/{section_storage}/{delta}/{region}'
+  defaults:
+    _title: 'Configure column'
+    _form: '\Drupal\layoutcomponents\Form\LcUpdateColumn'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.copy:
+  path: '/layoutcomponents/copy'
+  defaults:
+    _title: 'Clipboard'
+    _form: '\Drupal\layoutcomponents\Form\LcCopy'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.copy_remove:
+  path: '/layoutcomponents/remove/{section_storage_type}/{section_storage}'
+  defaults:
+    _title: 'Clipboard'
+    _form: '\Drupal\layoutcomponents\Form\LcCopyRemove'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.copy_block:
+  path: '/layoutcomponents/copy/block/{section_storage_type}/{section_storage}/{delta}/{region}/{uuid}'
+  defaults:
+    _title: 'Copy block'
+    _form: '\Drupal\layoutcomponents\Form\LcCopyBlock'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.copy_column:
+  path: '/layoutcomponents/copy/column/{section_storage_type}/{section_storage}/{delta}/{region}'
+  defaults:
+    _title: 'Copy column'
+    _form: '\Drupal\layoutcomponents\Form\LcCopyColumn'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.copy_section:
+  path: '/layoutcomponents/copy/section/{section_storage_type}/{section_storage}/{delta}'
+  defaults:
+    _title: 'Copy section'
+    _form: '\Drupal\layoutcomponents\Form\LcCopySection'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layoutcomponents.getmedia:
+  path: '/layoutcomponents/media/{id}'
+  defaults:
+   _controller: '\Drupal\layoutcomponents\Controller\LcInlineMedia::getMedia'
+   _title: 'Choose a layout for this section'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE
+
+layoutcomponents.getclipboard:
+  path: '/layoutcomponents/clipboard'
+  defaults:
+    _controller: '\Drupal\layoutcomponents\Controller\LcClipboardController::getElement'
+    _title: 'LC clipboard'
+  requirements:
+    _permission: 'lc clipboard'
+  options:
+    _admin_route: TRUE

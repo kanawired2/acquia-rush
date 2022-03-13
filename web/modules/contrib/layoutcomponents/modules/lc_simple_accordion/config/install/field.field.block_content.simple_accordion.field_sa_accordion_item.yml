@@ -1,0 +1,32 @@
+uuid: 1b6de130-c0ae-419e-81d9-5d488918e31d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_accordion
+    - block_content.type.simple_accordion_item
+    - field.storage.block_content.field_sa_accordion_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: Vt0LqKC6Y_B8mWZGIxCjpTVwH71iGxOmYTlh_I_nqbI
+id: block_content.simple_accordion.field_sa_accordion_item
+field_name: field_sa_accordion_item
+entity_type: block_content
+bundle: simple_accordion
+label: 'Accordion items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      simple_accordion_item: simple_accordion_item
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

@@ -1,0 +1,33 @@
+uuid: 571abcca-fd80-4ff3-a053-6b104c08ef92
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text
+    - field.field.block_content.simple_text.field_st_extra_attributes
+    - field.field.block_content.simple_text.field_st_extra_class
+    - field.field.block_content.simple_text.field_st_long_text
+    - field.field.block_content.simple_text.field_st_margin_bottom
+    - field.field.block_content.simple_text.field_st_margin_top
+  module:
+    - text
+_core:
+  default_config_hash: DetpEYbTrHUXxsQMX22axlu0SY_qs3z4KG9eP5P7RCk
+id: block_content.simple_text.default
+targetEntityType: block_content
+bundle: simple_text
+mode: default
+content:
+  field_st_long_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_st_extra_attributes: true
+  field_st_extra_class: true
+  field_st_margin_bottom: true
+  field_st_margin_top: true
+  langcode: true

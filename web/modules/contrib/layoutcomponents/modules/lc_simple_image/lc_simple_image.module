@@ -1,0 +1,432 @@
+<?php
+
+/**
+ * @file
+ * LC Simple image module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\block_content\Entity\BlockContent;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_image_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_image' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_image_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_image/lc_simple_image';
+}
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_image_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_image':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_image')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function lc_simple_image_preprocess_field(&$variables) {
+  if ($variables['field_type'] == "image") {
+    $element = $variables['element'];
+
+    foreach ($variables['items'] as $i => $item) {
+      // Does not apply the following modifications to image in case the
+      // `image_url` is selected as the field display format.
+      if ($variables['element']['#formatter'] == 'image_url') {
+        continue;
+      }
+
+      /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $imageItem */
+      $imageItem = $variables['items'][$i]['content']['#item'];
+
+      if (!isset($imageItem->getEntity()->_referringItem)) {
+        continue;
+      }
+
+      $variables['items'][$i]['content']['#cache']['max-age'] = 0;
+      $variables['items'][$i]['content']['#cache']['contexts'] = [];
+      $variables['items'][$i]['content']['#cache']['tags'] = [];
+
+      // Get block entity.
+      $parent = $imageItem->getEntity()->_referringItem->getEntity();
+
+      if (!$parent instanceof BlockContent) {
+        continue;
+      }
+
+      if ($parent->bundle() != "simple_image") {
+        continue;
+      }
+
+      // Block.
+      $parent_id = str_replace(" ", "_", $parent->uuid());
+
+      // Default item.
+      $styles = [];
+      $classes = ["lc-inline_block_$parent_id-image-edit"];
+
+      // Image.
+      $display = $parent->get('field_si_image_display')->getString();
+
+      // Borders.
+      $border_type = $parent->get('field_si_border_type')->getString();
+      $border_size = $parent->get('field_si_border_size')->getString();
+      $border_color = $parent->get('field_si_border_color')->getString();
+      $border_radius = $parent->get('field_si_border_radius')->getString();
+
+      // Margins.
+      $align = $parent->get('field_si_align')->getString();
+      $margin_top = $parent->get('field_si_margin_top')->getString();
+      $margin_bottom = $parent->get('field_si_margin_bottom')->getString();
+
+      // Sizing.
+      $width = $parent->get('field_si_width')->getString();
+
+      // Misc.
+      $extra_class = $parent->get('field_si_extra_class')->getString();
+      $extra_attributes = $parent->get('field_si_extra_attributes')->getString();
+
+      // Set new border.
+      if (!empty($border_type)) {
+        $border = 'border';
+        if ($border_type != 'all') {
+          $border .= "-" . $border_type . ":";
+        }
+        else {
+          $border .= ":";
+        }
+        if (!empty($border_size)) {
+          $styles[] = $border . " " . $border_size . "px solid;";
+          $styles[] = "border-color: $border_color ;";
+        }
+      }
+
+      // Set border radius.
+      if (!empty($border_radius)) {
+        $styles[] = "border-radius: " . $border_radius . "px;";
+      }
+
+      // Set margin top.
+      if (!empty($margin_top)) {
+        $styles[] = "margin-top: " . $margin_top . "px;";
+      }
+
+      // Set margin bottom.
+      if (!empty($margin_bottom)) {
+        $styles[] = "margin-bottom: " . $margin_bottom . "px;";
+      }
+
+      // Set width.
+      if (!empty($width)) {
+        if ($width > 0) {
+          $styles[] = "width: " . $width . "%;";
+        }
+        else {
+          $styles[] = "width: 100%;";
+
+        }
+      }
+
+      $styles[] = 'max-width: 100%;';
+      $styles[] = 'height: auto;';
+
+      // Set classes.
+      if (!empty($extra_class)) {
+        $extra_class = explode(" ", $extra_class);
+        $classes = array_merge($classes, $extra_class);
+      }
+
+      // Set attributes.
+      $ex_attributes = [];
+      if (!empty($extra_attributes)) {
+        $parts = explode(" ", $extra_attributes);
+        foreach ($parts as $attribute) {
+          if (strpos($attribute, '|') !== FALSE) {
+            [$key, $value] = explode('|', $attribute);
+            $ex_attributes[$key] = $value;
+          }
+        }
+      }
+
+      // Set new classes and styles.
+      $attributes = [
+        'class' => $classes,
+        'style' => implode($styles),
+      ];
+
+      // Merge new attributes.
+      $attributes = array_merge($attributes, $ex_attributes);
+      $variables['items'][$i]['content']['#item_attributes'] = $attributes;
+      $variables['items'][$i]['content']['#image_style'] = $display;
+
+      // Create image container.
+      $container = [
+        '#type' => "container",
+        '#attributes' => [
+          'class' => [
+            "lc-inline_block_$parent_id-image-container-edit",
+            "pl-0",
+            "pr-0",
+            "d-flex",
+            $align,
+          ],
+        ],
+        'content' => $variables['items'][$i]['content'],
+      ];
+
+      $variables['items'][$i]['content'] = $container;
+    }
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function lc_simple_image_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#bundle'] == 'simple_image') {
+    if (!array_key_exists('#default_value', $entity_form) || !isset($entity_form['#default_value'])) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_image_form_alter($entity_form, $block_id);
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_image_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_image") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_image_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_image_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC inline image.
+  $image = $form['field_si_image']['widget'];
+  $form['field_si_image']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'input' => 'media',
+      'type' => 'attribute',
+      'style' => 'image',
+      'element' => 'media',
+    ],
+    $image
+  );
+
+  // LC inline image display.
+  $styles = \Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple();
+  $options = [];
+
+  /** @var \Drupal\image\Entity\ImageStyle $style */
+  foreach ($styles as $style) {
+    $options[$style->id()] = $style->label();
+  }
+
+  $display = $form['field_si_image_display']['widget'];
+  $display['#options'] = array_merge($display['#options'], $options);
+  $form['field_si_image_display']['widget'] = $lcApi->getComponentElement(
+    [
+      'no_lc' => TRUE,
+    ],
+    $display
+  );
+
+  // Ensure that the new options are also added to the allowed_values list.
+  $fieldStorage = FieldStorageConfig::loadByName('block_content', 'field_si_image_display');
+  $fieldStorage->setSetting('allowed_values', $options);
+  $fieldStorage->save();
+
+  // LC inline border type.
+  $border_type = $form['field_si_border_type']['widget'];
+  $form['field_si_border_type']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'input' => 'select',
+      'type' => 'style',
+      'style' => 'border',
+      'depend' => [
+        'size' => 'lc-inline_block_' . $block_id . '-image-border_size',
+        'color' => 'lc-inline_block_' . $block_id . '-image-border_color',
+      ],
+      'element' => 'select',
+      'class' => 'border_type',
+    ],
+    $border_type
+  );
+
+  // LC inline border size.
+  $border_size = $form['field_si_border_size']['widget'][0]['value'];
+  $form['field_si_border_size']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'input' => 'slider',
+      'type' => 'style',
+      'style' => 'border-size',
+      'depend' => [
+        'type' => 'lc-inline_block_' . $block_id . '-image-border_type',
+        'color' => 'lc-inline_block_' . $block_id . '-image-border_color',
+      ],
+      'element' => 'slider',
+      'class' => 'border_size',
+    ],
+    $border_size
+  );
+
+  // LC inline border color.
+  $border_color = $form['field_si_border_color']['widget'][0];
+  $form['field_si_border_color']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'type' => 'style',
+      'style' => 'border-color',
+      'depend' => [
+        'type' => 'lc-inline_block_' . $block_id . '-image-border_type',
+        'size' => 'lc-inline_block_' . $block_id . '-image-border_size',
+      ],
+      'element' => 'color',
+      'class' => 'border_color',
+    ],
+    $border_color
+  );
+
+  // LC inline border radius.
+  $border_radius = $form['field_si_border_radius']['widget'][0]['value'];
+  $form['field_si_border_radius']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'type' => 'style',
+      'style' => 'border-radius',
+      'element' => 'slider',
+      'class' => 'border_color',
+    ],
+    $border_radius
+  );
+
+  // LC inline align.
+  $align = $form['field_si_align']['widget'];
+  $form['field_si_align']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image-container',
+      'type' => 'class',
+      'style' => 'align',
+      'class_remove' => 'justify-content-*',
+      'element' => 'select',
+      'class' => 'align',
+    ],
+    $align
+  );
+
+  // LC inline margin top.
+  $margin_top = $form['field_si_margin_top']['widget'][0]['value'];
+  $form['field_si_margin_top']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'type' => 'style',
+      'style' => 'margin-top',
+      'element' => 'slider',
+      'class' => 'margin_top',
+    ],
+    $margin_top
+  );
+
+  // LC inline margin bottom.
+  $margin_bottom = $form['field_si_margin_bottom']['widget'][0]['value'];
+  $form['field_si_margin_bottom']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'type' => 'style',
+      'style' => 'margin-bottom',
+      'element' => 'slider',
+      'class' => 'margin_bottom',
+    ],
+    $margin_bottom
+  );
+
+  // LC inline width.
+  $width = $form['field_si_width']['widget'][0]['value'];
+  $form['field_si_width']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'type' => 'style',
+      'style' => 'width',
+      'element' => 'slider',
+      'class' => 'width',
+    ],
+    $width
+  );
+
+  // LC inline extra class.
+  $extra_class = $form['field_si_extra_class']['widget'][0]['value'];
+  $form['field_si_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+
+  // LC extra attributes.
+  $extra_attributes = &$form['field_si_extra_attributes']['widget'][0]['value'];
+  $form['field_si_extra_attributes']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-image',
+      'input' => 'text',
+      'type' => 'attribute',
+      'style' => 'extra_attributes',
+      'element' => 'text',
+    ],
+    $extra_attributes
+  );
+}

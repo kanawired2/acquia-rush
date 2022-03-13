@@ -1,0 +1,7 @@
+lc_simple_countdown:
+  version: VERSION
+  css:
+    layout:
+      css/lc_simple_countdown.css: {}
+  js:
+    js/lc_simple_countdown.js: {}

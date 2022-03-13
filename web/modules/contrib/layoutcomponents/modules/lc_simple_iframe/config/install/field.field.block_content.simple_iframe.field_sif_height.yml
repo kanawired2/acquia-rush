@@ -1,0 +1,27 @@
+uuid: 2f669660-e811-4251-9b60-aff993c192c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_iframe
+    - field.storage.block_content.field_sif_height
+_core:
+  default_config_hash: EJ8MadXP4XTnnviu-OX0b6L1m1jkL7_z3FhG6Z1bonE
+id: block_content.simple_iframe.field_sif_height
+field_name: field_sif_height
+entity_type: block_content
+bundle: simple_iframe
+label: Height
+description: 'Set the height of this iframe'
+required: false
+translatable: true
+default_value:
+  -
+    value: 100
+default_value_callback: ''
+settings:
+  min: 100
+  max: 1000
+  prefix: ''
+  suffix: ''
+field_type: integer

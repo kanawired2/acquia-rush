@@ -1,0 +1,20 @@
+uuid: 9ffd7c25-98d6-4665-bcc6-a48ed3100814
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_si_margin_top
+field_name: field_si_margin_top
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

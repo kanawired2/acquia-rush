@@ -1,0 +1,27 @@
+
+layoutcomponents:
+  js:
+    https://kit.fontawesome.com/42fec296be.js: { external: true }
+    js/layoutcomponents.js: {}
+    js/parallax.min.js: {}
+  css:
+    component:
+      css/lc-color-dark.css: {}
+
+layoutcomponents.editform:
+  js:
+    js/includes/jquery.alterclass.js: {}
+    js/includes/jquery.changeelementtype.js: {}
+    js/editForm.js: {}
+    js/tooltip.js: {}
+  dependencies:
+    - ckeditor/drupal.ckeditor
+    - jquery_ui_tooltip/tooltip
+
+layoutcomponents.lateral:
+  js:
+    js/lateral/dialog.js: {}
+
+layoutcomponents.lateral-column:
+  js:
+    js/lateral/dialog-column.js: {}

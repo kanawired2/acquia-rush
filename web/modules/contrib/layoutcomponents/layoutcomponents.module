@@ -1,0 +1,141 @@
+<?php
+
+/**
+ * @file
+ * Contains layoutcomponents.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\layoutcomponents\LcPage;
+use Drupal\layoutcomponents\LcEntity;
+use Drupal\layoutcomponents\LcTheme;
+
+/**
+ * Implements hook_theme().
+ */
+function layoutcomponents_theme() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->theme();
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ * For base theme suggestions_HOOK not work, we have to use the default.
+ */
+function layoutcomponents_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->themeSuggestionsLayoutLayoutcomponentsBase($suggestions, $variables, $hook);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function layoutcomponents_theme_suggestions_layout__layoutcomponents_region_alter(array &$suggestions, array $variables, $hook) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->themeSuggestionsLayoutLayoutcomponentsRegion($suggestions, $variables, $hook);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function layoutcomponents_theme_suggestions_layoutcomponents_block_content(array $variables) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->themeSuggestionsLayoutcomponentsBlockContent($variables);
+}
+
+/**
+ * Preprocess function for block content template.
+ */
+function template_preprocess_layoutcomponents_block_content(&$variables) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->preprocessLayoutcomponentsBlockContent($variables);
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function layoutcomponents_theme_registry_alter(&$theme_registry) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->themeRegistryAlter($theme_registry);
+}
+
+/**
+ * Implements hook_help().
+ */
+function layoutcomponents_help($route_name, RouteMatchInterface $route_match) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcTheme::class)
+    ->help($route_name, $route_match);
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function layoutcomponents_page_attachments(&$page) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcPage::class)
+    ->pageAttachments($page);
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function layoutcomponents_library_info_alter(&$libraries, $extension) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcPage::class)
+    ->libraryInfoAlter($libraries, $extension);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter() for block_content.
+ */
+function layoutcomponents_block_content_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcEntity::class)
+    ->blockContentViewAlter($build, $entity, $display);
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function layoutcomponents_preprocess_block(array &$variables) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcEntity::class)
+    ->preprocessBlock($variables);
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function layoutcomponents_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcEntity::class)
+    ->inlineEntityFormEntityFormAlter($entity_form, $form_state);
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function layoutcomponents_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcEntity::class)
+    ->blockTypeFormAlter($form, $form_state, $block_type);
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function layoutcomponents_entity_type_alter(array &$entity_types) {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(LcEntity::class)
+    ->entityTypeAlter($entity_types);
+}

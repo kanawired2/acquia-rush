@@ -1,0 +1,6 @@
+services:
+  lc_commands.commands:
+    class: Drupal\lc_commands\Commands\LcCommands
+    arguments: ['@entity_type.manager', '@serializer', '@config.factory']
+    tags:
+      - { name: drush.command }

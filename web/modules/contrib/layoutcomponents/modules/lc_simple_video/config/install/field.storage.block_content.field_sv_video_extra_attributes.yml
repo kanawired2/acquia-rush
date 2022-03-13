@@ -1,0 +1,21 @@
+uuid: f4dad938-d3b9-4c6e-8666-c68a58e2b482
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_sv_video_extra_attributes
+field_name: field_sv_video_extra_attributes
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 31e0db16-2671-428f-beea-3a2dada08a8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_margin_bottom
+_core:
+  default_config_hash: p0pImSz9XW3j8oHO53lnYWoq1F-guXr4ztuvWLCeiFI
+id: block_content.simple_title.field_sti_margin_bottom
+field_name: field_sti_margin_bottom
+entity_type: block_content
+bundle: simple_title
+label: 'Margin Bottom'
+description: 'Set the margin-bottom of this title'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

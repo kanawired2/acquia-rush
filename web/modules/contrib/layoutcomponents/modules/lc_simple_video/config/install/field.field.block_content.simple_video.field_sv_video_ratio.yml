@@ -1,0 +1,23 @@
+uuid: 72db53aa-d434-4178-ad80-000071929ef0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.storage.block_content.field_sv_video_ratio
+  module:
+    - options
+id: block_content.simple_video.field_sv_video_ratio
+field_name: field_sv_video_ratio
+entity_type: block_content
+bundle: simple_video
+label: Ratio
+description: 'Set the ratio of this video'
+required: false
+translatable: false
+default_value:
+  -
+    value: 4by3
+default_value_callback: ''
+settings: {  }
+field_type: list_string

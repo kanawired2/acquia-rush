@@ -1,0 +1,10 @@
+uuid: 2821b6b0-1644-4e52-99f2-9f3f6ffec362
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kALQCTWYW1OP2VP8PHbYDMXmWhRR_9euVtn8QZvDNjc
+id: simple_card_item_node_reference
+label: 'Card item node reference'
+revision: 1
+description: ''

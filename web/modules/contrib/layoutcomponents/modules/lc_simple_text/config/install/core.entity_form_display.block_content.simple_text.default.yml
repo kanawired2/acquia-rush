@@ -1,0 +1,176 @@
+uuid: dbdd26b7-9e61-437e-9500-adfc31207391
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text
+    - field.field.block_content.simple_text.field_st_extra_attributes
+    - field.field.block_content.simple_text.field_st_extra_class
+    - field.field.block_content.simple_text.field_st_long_text
+    - field.field.block_content.simple_text.field_st_margin_bottom
+    - field.field.block_content.simple_text.field_st_margin_top
+  module:
+    - field_group
+    - sliderwidget
+    - text
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - group_general
+        - group_styles
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Info
+    group_general:
+      children:
+        - field_st_long_text
+      parent_name: group_info
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: General
+    group_styles:
+      children:
+        - group_spacing
+        - group_misc
+      parent_name: group_info
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Styles
+    group_misc:
+      children:
+        - field_st_extra_class
+        - field_st_extra_attributes
+      parent_name: group_styles
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Misc
+    group_spacing:
+      children:
+        - field_st_margin_top
+        - field_st_margin_right
+        - field_st_margin_bottom
+        - field_st_margin_left
+      parent_name: group_styles
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: Spacing
+_core:
+  default_config_hash: '-5VxVb7ktbeiv6X3dll5Akx0SCIx1duwRRTywimUQC8'
+id: block_content.simple_text.default
+targetEntityType: block_content
+bundle: simple_text
+mode: default
+content:
+  field_st_extra_attributes:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_st_extra_class:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_st_long_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_st_margin_bottom:
+    weight: 28
+    settings:
+      sliderwidget_settings:
+        animate: false
+        orientation: horizontal
+        range: false
+        step: 1
+        slider_style: null
+        display_values: true
+        multi_value: false
+        display_values_format: '%{value}%'
+        display_bubble: false
+        display_bubble_format: '%{value}%'
+        slider_length: null
+        hide_inputs: true
+        hide_slider_handle_when_no_value: false
+    third_party_settings: {  }
+    type: sliderwidget_widget
+    region: content
+  field_st_margin_top:
+    weight: 26
+    settings:
+      sliderwidget_settings:
+        animate: false
+        orientation: horizontal
+        range: false
+        step: 1
+        slider_style: null
+        display_values: true
+        multi_value: false
+        display_values_format: '%{value}%'
+        display_bubble: false
+        display_bubble_format: '%{value}%'
+        slider_length: null
+        hide_inputs: true
+        hide_slider_handle_when_no_value: false
+    third_party_settings: {  }
+    type: sliderwidget_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  info: true

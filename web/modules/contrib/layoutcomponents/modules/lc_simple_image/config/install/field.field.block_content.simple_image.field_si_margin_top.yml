@@ -1,0 +1,23 @@
+uuid: 16fab575-3834-4712-83cc-5453c66efd83
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_margin_top
+id: block_content.simple_image.field_si_margin_top
+field_name: field_si_margin_top
+entity_type: block_content
+bundle: simple_image
+label: 'Margin top'
+description: 'Set the margin-top of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 500
+  prefix: ''
+  suffix: ''
+field_type: integer

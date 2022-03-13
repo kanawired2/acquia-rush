@@ -1,0 +1,30 @@
+uuid: 29a54be7-bc6f-477f-98cf-7c539605fca6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_accordion_item
+    - block_content.type.simple_text
+    - field.storage.block_content.field_sa_description
+  module:
+    - entity_reference_revisions
+id: block_content.simple_accordion_item.field_sa_description
+field_name: field_sa_description
+entity_type: block_content
+bundle: simple_accordion_item
+label: Description
+description: 'Set the description of this accordion item'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      simple_text: simple_text
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

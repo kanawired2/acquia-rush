@@ -1,0 +1,17 @@
+'default lc general settings':
+  title: 'Configuration: Default LC General settings'
+
+'default lc interface settings':
+  title: 'Configuration: Default LC Interface settings'
+
+'default lc colors settings':
+  title: 'Configuration: Default LC Colors settings'
+
+'default lc section settings':
+  title: 'Configuration: Default LC Section settings'
+
+'default lc column settings':
+  title: 'Configuration: Default LC Column settings'
+
+permission_callbacks:
+  - \Drupal\layoutcomponents\LcPermissions::getPermissions

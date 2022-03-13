@@ -1,0 +1,25 @@
+uuid: 8cfa73a6-623d-46a6-9d29-535d69dd4f22
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text
+    - field.storage.block_content.field_st_margin_bottom
+id: block_content.simple_text.field_st_margin_bottom
+field_name: field_st_margin_bottom
+entity_type: block_content
+bundle: simple_text
+label: 'Margin bottom'
+description: 'Set the margin-bottom of this text'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 500
+  prefix: ''
+  suffix: ''
+field_type: integer

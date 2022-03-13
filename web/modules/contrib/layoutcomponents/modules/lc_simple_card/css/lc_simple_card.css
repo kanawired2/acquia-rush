@@ -1,0 +1,19 @@
+.simple-card-grid-item {
+  width: 33.333%;
+}
+
+.simple-card-grid-item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-inline-blocksimple-card .field--name-field-sca-image {
+  width: 100%;
+  float: left;
+}
+
+#drupal-off-canvas ul li a.inline-block-list__item.simple_card:before {
+  content: "\f2bb";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

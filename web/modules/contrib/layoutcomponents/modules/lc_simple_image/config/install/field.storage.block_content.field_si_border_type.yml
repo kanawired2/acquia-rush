@@ -1,0 +1,36 @@
+uuid: c7648ae7-a868-4de8-a036-2551f6edbae7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_si_border_type
+field_name: field_si_border_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all
+      label: All
+    -
+      value: top
+      label: Top
+    -
+      value: right
+      label: Right
+    -
+      value: bottom
+      label: Bottom
+    -
+      value: left
+      label: Left
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: e9b7112a-e537-47d4-b88e-882b15cfa12b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+id: block_content.field_st_item
+field_name: field_st_item
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: block_content
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,12 @@
+.block-inline-blocksimple-accordion .card-block {
+  margin: 20px!important;
+}
+.block-inline-blocksimple-accordion .panel-title a {
+  display: block;
+}
+
+#drupal-off-canvas ul li a.inline-block-list__item.simple_accordion:before {
+  content: "\f03c";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

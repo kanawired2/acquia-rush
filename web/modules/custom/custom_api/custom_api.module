@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_api_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_api module.
+    case 'help.page.custom_api':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module containing Drupal API to cater site specific functionality.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_api_theme() {
+  return [
+    'custom_api' => [
+      'render element' => 'children',
+    ],
+  ];
+}

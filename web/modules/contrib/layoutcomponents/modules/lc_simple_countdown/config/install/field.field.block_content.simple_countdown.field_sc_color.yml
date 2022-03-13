@@ -1,0 +1,24 @@
+uuid: f681ce54-8775-49ae-8091-c1fb047e9f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_countdown
+    - field.storage.block_content.field_sc_color
+  module:
+    - color_field
+_core:
+  default_config_hash: 8hOq0akVy5_o1GunJgYUcIfuto74aSuUbt_hn34RPf8
+id: block_content.simple_countdown.field_sc_color
+field_name: field_sc_color
+entity_type: block_content
+bundle: simple_countdown
+label: 'Countdown color'
+description: 'Set the color for the countdown'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

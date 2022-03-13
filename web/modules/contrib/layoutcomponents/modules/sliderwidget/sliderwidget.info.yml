@@ -1,0 +1,16 @@
+name: Slider widget
+type: module
+description: Slider widget UI for number field
+# core: 8.x
+package: Fields
+
+# Information added by Drupal.org packaging script on 2018-09-27
+# version: '8.x-2.0'
+core_version_requirement: ^8.8 || ^9
+# project: 'sliderwidget'
+# datestamp: 1538038384
+
+# Information added by Drupal.org packaging script on 2021-07-09
+version: '3.0.0'
+project: 'layoutcomponents'
+datestamp: 1625856471

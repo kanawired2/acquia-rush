@@ -1,0 +1,14 @@
+name: Layout Components - Commands
+type: module
+description: Include commands to export and import the blocks.
+package: LayoutComponents
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - drupal:layoutcomponents
+  - hal
+  - serialization
+
+# Information added by Drupal.org packaging script on 2021-07-09
+version: '3.0.0'
+project: 'layoutcomponents'
+datestamp: 1625856471

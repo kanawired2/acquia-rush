@@ -1,0 +1,23 @@
+uuid: 7fb24d0c-35ee-412a-8b64-703ca6c21dbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_countdown
+    - field.storage.block_content.field_sc_date
+  module:
+    - datetime
+_core:
+  default_config_hash: Axa2LdtSSZMwAp4w1WsEEq2xhVB-F4sYq3whu2Fy9W8
+id: block_content.simple_countdown.field_sc_date
+field_name: field_sc_date
+entity_type: block_content
+bundle: simple_countdown
+label: 'Final date'
+description: 'Select the final date to create the countdown'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

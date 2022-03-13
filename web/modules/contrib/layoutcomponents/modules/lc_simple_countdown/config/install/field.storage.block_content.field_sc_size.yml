@@ -1,0 +1,20 @@
+uuid: 1205e476-c3f6-438b-b8a2-99a8cbdbc2f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_sc_size
+field_name: field_sc_size
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

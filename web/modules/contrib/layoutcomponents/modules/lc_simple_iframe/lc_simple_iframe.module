@@ -1,0 +1,228 @@
+<?php
+
+/**
+ * @file
+ * LC Simple Iframe module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_iframe_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_iframe' => [
+      'base hook' => 'block',
+      'variables' => ['iframe' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_iframe_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_iframe/lc_simple_iframe';
+}
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_iframe_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_iframe':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_iframe')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function lc_simple_iframe_preprocess_block(&$variables) {
+  if ($variables['base_plugin_id'] != 'inline_block') {
+    return;
+  }
+
+  if ($variables['derivative_plugin_id'] != 'simple_iframe') {
+    return;
+  }
+
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['content']['#block_content'];
+  $block_id = str_replace(' ', '_', $block->uuid());
+
+  // Values.
+  $url = $block->get('field_sif_url')->getString();
+  $height = $block->get('field_sif_height')->getString();
+  $extra_class = $block->get('field_sif_extra_class')->getString();
+  $extra_attributes = $block->get('field_sif_extra_attributes')->getString();
+
+  // Container styles.
+  $container = new Attribute();
+  $container->addClass([
+    "lc-inline_block_$block_id-iframe-container-edit",
+    "pl-0",
+    "pr-0",
+    "d-flex",
+  ]);
+
+  // Element styles.
+  $element = new Attribute();
+  $element->addClass('lc-inline_block_' . $block_id . '-iframe-edit');
+
+  // Defaults.
+  $styles = ['width: 100%'];
+  $classes = [
+    'simple-iframe',
+    'lc-inline_block_' . $block_id . '-iframe-edit',
+  ];
+
+  // Set url.
+  if (!empty($url)) {
+    $element->setAttribute('src', $url);
+  }
+
+  // Set title.
+  if (!empty($height)) {
+    $styles[] = "height: " . $height . "px";
+  }
+
+  // Set classes.
+  if (!empty($extra_class)) {
+    $extra_class = explode(" ", $extra_class);
+    $classes = array_merge($classes, $extra_class);
+    $element->addClass($classes);
+  }
+
+  // Set attributes.
+  if (!empty($extra_attributes)) {
+    $parts = explode(" ", $extra_attributes);
+    foreach ($parts as $attribute) {
+      if (strpos($attribute, '|') !== FALSE) {
+        list($key, $value) = explode('|', $attribute);
+        $element->setAttribute($key, $value);
+      }
+    }
+  }
+
+  // Generate the element styles.
+  $element->setAttribute('style', implode(';', $styles));
+
+  // Store the styles.
+  $variables['content']['iframe'] = [
+    'container' => $container,
+    'element' => $element,
+  ];
+
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function lc_simple_iframe_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#bundle'] == 'simple_iframe') {
+    if (!array_key_exists('#default_value', $entity_form) || !isset($entity_form['#default_value'])) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_iframe_form_alter($entity_form, $block_id);
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_iframe_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_iframe") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_iframe_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_iframe_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC url.
+  $form['field_sif_url']['widget'][0]['uri']['#description'] = t('Set the url of this iframe');
+  $url = $form['field_sif_url']['widget'][0]['uri'];
+  $form['field_sif_url']['widget'][0]['uri'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-iframe',
+      'no_lc' => TRUE,
+    ],
+    $url
+  );
+
+  // LC height.
+  $height = $form['field_sif_height']['widget'][0]['value'];
+  $form['field_sif_height']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-iframe',
+      'input' => 'slider',
+      'type' => 'style',
+      'style' => 'height_normal',
+      'element' => 'slider',
+      'class' => 'height',
+    ],
+    $height
+  );
+
+  // LC extra class.
+  $extra_class = $form['field_sif_extra_class']['widget'][0]['value'];
+  $form['field_sif_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-iframe',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+
+  // LC extra attributes.
+  $extra_attributes = &$form['field_sif_extra_attributes']['widget'][0]['value'];
+  $form['field_sif_extra_attributes']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-iframe',
+      'input' => 'text',
+      'type' => 'attribute',
+      'style' => 'extra_attributes',
+      'element' => 'text',
+    ],
+    $extra_attributes
+  );
+
+}

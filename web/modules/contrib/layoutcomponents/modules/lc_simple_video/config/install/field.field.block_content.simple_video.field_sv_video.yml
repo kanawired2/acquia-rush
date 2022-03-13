@@ -1,0 +1,27 @@
+uuid: b7bf58e9-baa2-4c23-9b28-ade536709437
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.storage.block_content.field_sv_video
+  module:
+    - video_embed_field
+_core:
+  default_config_hash: 8b3oPknIPdCIXYZm6AnnXCKIVZgUFjLzyeN_9hKM6jc
+id: block_content.simple_video.field_sv_video
+field_name: field_sv_video
+entity_type: block_content
+bundle: simple_video
+label: Video
+description: 'Set the video link'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: '0'
+    vimeo: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

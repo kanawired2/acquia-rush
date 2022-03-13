@@ -1,0 +1,23 @@
+uuid: 5c24feb0-1da2-4637-8c22-de3e4a3a43b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_align
+  module:
+    - options
+id: block_content.simple_button.field_sb_align
+field_name: field_sb_align
+entity_type: block_content
+bundle: simple_button
+label: Align
+description: 'Set the align of this button'
+required: false
+translatable: false
+default_value:
+  -
+    value: justify-content-start
+default_value_callback: ''
+settings: {  }
+field_type: list_string

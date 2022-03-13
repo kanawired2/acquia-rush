@@ -1,0 +1,21 @@
+uuid: 1c4ea672-c3d6-49e4-8c26-de35b3c0e6f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+_core:
+  default_config_hash: mIkuXIX3VH30dTgCEy8x4OXV5MrHJxIvh4aD5fIH85I
+id: block_content.field_sif_url
+field_name: field_sif_url
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

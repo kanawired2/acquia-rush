@@ -1,0 +1,26 @@
+uuid: 79315815-6218-489c-9c6c-637d6744e352
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_text
+  module:
+    - text
+_core:
+  default_config_hash: K73F2WnigrIIkdt5qmMIHQBlXyb5u3pPO_fOLO6wm94
+id: block_content.simple_title.field_sti_text
+field_name: field_sti_text
+entity_type: block_content
+bundle: simple_title
+label: Text
+description: 'Set the text of this title'
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p>New title</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,10 @@
+uuid: f01ae61b-f1ef-4461-beb6-4b5733842e78
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WOLYKM33eJEd5WOOtKw2bJglWJUSZcr61od0BSHu1kE
+id: simple_accordion
+label: Accordion
+revision: 1
+description: ''

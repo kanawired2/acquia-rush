@@ -1,0 +1,23 @@
+uuid: 1da58053-1514-43b8-9a07-8a851dea2c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_view_carousel
+    - field.storage.block_content.field_vc
+id: block_content.simple_view_carousel.field_vc
+field_name: field_vc
+entity_type: block_content
+bundle: simple_view_carousel
+label: View
+description: 'Find the view that you want to show'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

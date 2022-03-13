@@ -1,0 +1,22 @@
+uuid: cf57132f-a320-4f47-84ee-67b8f3ed3404
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - media
+_core:
+  default_config_hash: othqAMtc0SuOAA_b6_lLg_56KCrO_rNzLf40rWr0xg8
+id: block_content.field_sv_upload_video
+field_name: field_sv_upload_video
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

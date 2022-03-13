@@ -1,0 +1,25 @@
+uuid: 5eb8cd03-af05-4613-8e59-fef5636266e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_countdown
+    - field.storage.block_content.field_sc_size
+id: block_content.simple_countdown.field_sc_size
+field_name: field_sc_size
+entity_type: block_content
+bundle: simple_countdown
+label: 'Countdown size'
+description: 'Set the countdown size'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

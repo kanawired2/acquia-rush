@@ -1,0 +1,35 @@
+uuid: 91163231-a264-42ea-a28b-ac94d24d18f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_iframe
+    - field.field.block_content.simple_iframe.field_sif_extra_attributes
+    - field.field.block_content.simple_iframe.field_sif_extra_class
+    - field.field.block_content.simple_iframe.field_sif_height
+    - field.field.block_content.simple_iframe.field_sif_url
+  module:
+    - link
+_core:
+  default_config_hash: 81SLM9GSICglnzL3Yd_dPXW4f2ZOLa33TVVuhBZv5zs
+id: block_content.simple_iframe.default
+targetEntityType: block_content
+bundle: simple_iframe
+mode: default
+content:
+  field_sif_url:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_sif_extra_attributes: true
+  field_sif_extra_class: true
+  field_sif_height: true

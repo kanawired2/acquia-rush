@@ -1,0 +1,22 @@
+// out: ../css/lc_simple_image.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+.block-inline-blocksimple-image {
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+#drupal-off-canvas {
+  ul {
+    li {
+      a.inline-block-list__item.simple_image {
+        &:before {
+          content: "\f03e";
+          font-family: FontAwesome;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}

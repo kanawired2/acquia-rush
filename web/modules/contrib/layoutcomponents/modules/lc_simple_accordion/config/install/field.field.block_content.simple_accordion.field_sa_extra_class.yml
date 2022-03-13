@@ -1,0 +1,19 @@
+uuid: c78d1a5c-7917-4fa0-b367-cdbf082234b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_accordion
+    - field.storage.block_content.field_sa_extra_class
+id: block_content.simple_accordion.field_sa_extra_class
+field_name: field_sa_extra_class
+entity_type: block_content
+bundle: simple_accordion
+label: 'Extra Class'
+description: 'Set the extra classes: ej. class1 class2'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

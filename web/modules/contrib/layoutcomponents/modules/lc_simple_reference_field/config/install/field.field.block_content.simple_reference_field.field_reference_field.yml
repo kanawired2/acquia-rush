@@ -1,0 +1,30 @@
+uuid: ea027f93-d1a0-403b-a240-51b48ae7b0d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_reference_field
+    - field.storage.block_content.field_reference_field
+  module:
+    - layoutcomponents
+id: block_content.simple_reference_field.field_reference_field
+field_name: field_reference_field
+entity_type: block_content
+bundle: simple_reference_field
+label: 'Reference field'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    entity_id_context: null
+    entity_type: none
+    entity_id: none
+    entity_field: none
+    entity_field_label: above
+default_value_callback: ''
+settings:
+  plugin_types:
+    block: block
+  preselect_nodes: {  }
+field_type: layoutcomponents_field_reference

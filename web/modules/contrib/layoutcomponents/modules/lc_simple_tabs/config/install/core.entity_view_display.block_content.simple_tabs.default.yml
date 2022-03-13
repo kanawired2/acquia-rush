@@ -1,0 +1,35 @@
+uuid: f8a77114-0234-40d6-8101-3a2e1fc8e6b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tabs
+    - field.field.block_content.simple_tabs.field_st_item
+    - field.field.block_content.simple_tabs.field_sta_extra_class
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: eeY12QIk-CMVC2ciqZZlRiE5J3rh6nHdF3aZ85Kf2pg
+id: block_content.simple_tabs.default
+targetEntityType: block_content
+bundle: simple_tabs
+mode: default
+content:
+  field_st_item:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_sta_extra_class:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

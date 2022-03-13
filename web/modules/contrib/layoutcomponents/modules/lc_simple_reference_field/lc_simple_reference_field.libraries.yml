@@ -1,0 +1,5 @@
+lc_simple_reference_field:
+  version: VERSION
+  css:
+    layout:
+      css/lc_simple_reference_field.css: {}

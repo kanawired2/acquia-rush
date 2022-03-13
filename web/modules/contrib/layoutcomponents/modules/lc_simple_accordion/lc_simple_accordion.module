@@ -1,0 +1,164 @@
+<?php
+
+/**
+ * @file
+ * LC Simple accordion module file.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_accordion_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_accordion' => [
+      'base hook' => 'block',
+      'variables' => ['countdown_attributes' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_accordion_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_accordion/lc_simple_accordion';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function lc_simple_accordion_preprocess_block(&$variables) {
+  $variables['unique_id'] = uniqid();
+
+  if ($variables['base_plugin_id'] != 'inline_block') {
+    return;
+  }
+
+  if ($variables['derivative_plugin_id'] != 'simple_accordion') {
+    return;
+  }
+
+  if (!array_key_exists('#block_content',$variables['content'])) {
+    return;
+  }
+
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['content']['#block_content'];
+
+  $block_id = str_replace(' ', '_', $block->uuid());
+
+  $extra_class = $block->get('field_sa_extra_class')->getString();
+
+  $classes = ['lc-inline_block_' . $block_id . '-accordion-container-edit'];
+
+  // Set classes.
+  if (!empty($extra_class)) {
+    $extra_class = explode(" ", $extra_class);
+    $classes = array_merge($classes, $extra_class);
+  }
+
+  $container_attr = new Attribute();
+  $container_attr->addClass($classes);
+
+  $items['field_sa_accordion_item'] = $variables['content']['field_sa_accordion_item'];
+  unset($variables['content']['field_sa_accordion_item']);
+
+  /** @var \Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList $cards */
+  $cards = $items['field_sa_accordion_item']['#items'];
+
+  if (!isset($cards)) {
+    return;
+  }
+
+  for ($i = 0; $i < $cards->count(); $i++) {
+    /** @var \Drupal\block_content\Entity\BlockContent $block_item */
+    $block_item = $items['field_sa_accordion_item'][$i]['#block_content'];
+
+    // Header attributes.
+    $header = new Attribute();
+    $header->addClass([
+      'lc-inline_block_' . $block_item->uuid() . '-accordion-item-edit',
+      'card-header',
+    ]);
+    $header->setAttribute('id', 'card-' . $block_id . '-' . $i);
+
+    // Card attributes.
+    $item = new Attribute();
+    $item->addClass([
+      'collapse',
+    ]);
+    $item->setAttribute('aria-labelledby', 'card-' . $block_id . '-' . $i);
+
+    // Store.
+    $items['field_sa_accordion_item'][$i]['header_attributes'] = $header;
+    $items['field_sa_accordion_item'][$i]['card_attributes'] = $item;
+    $items['field_sa_accordion_item'][$i]['uuid'] = $block_id;
+  }
+
+  // Store container.
+  $variables['content']['container'] = [
+    '#type' => 'container',
+    'attributes' => $container_attr,
+    'id' => $block_id,
+    'content' => $items,
+  ];
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function lc_simple_accordion_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#bundle'] == 'simple_accordion') {
+    if (!array_key_exists('#default_value', $entity_form) || !isset($entity_form['#default_value'])) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_accordion_form_alter($entity_form, $block_id);
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_accordion_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_accordion") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_accordion_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_accordion_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC inline video extra class.
+  $extra_class = $form['field_sa_extra_class']['widget'][0]['value'];
+  $form['field_sa_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-accordion-container',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+}

@@ -1,0 +1,3 @@
+lc_slick:
+  dependencies:
+    - slick/slick.theme

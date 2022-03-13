@@ -1,0 +1,10 @@
+.block-inline-blocksimple-iframe .simple-iframe {
+  width: 100%;
+  border: none;
+}
+
+#drupal-off-canvas ul li a.inline-block-list__item.simple_iframe:before {
+  content: "\f2d0";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

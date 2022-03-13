@@ -1,0 +1,22 @@
+uuid: 7bdf53b2-aab8-4d6c-b97b-6ecff6a0eda6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: lJZiURluw0mcwuAEheRzmSEF0630gw9kWz-XgZPe5y8
+id: block_content.field_sif_height
+field_name: field_sif_height
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: 2678510e-dec8-4756-8a80-cf25db61dfb4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eElBtsBkm_CkZNKtw_zjOo2BA52TRmqt4xOWgrJCyi0
+id: simple_button
+label: Button
+revision: 1
+description: ''

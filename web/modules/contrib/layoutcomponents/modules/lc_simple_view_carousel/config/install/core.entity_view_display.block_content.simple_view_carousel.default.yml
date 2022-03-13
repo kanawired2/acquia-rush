@@ -1,0 +1,25 @@
+uuid: 784e4fc4-5bd1-4c34-b36b-f9a89ef0b8c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_view_carousel
+    - field.field.block_content.simple_view_carousel.field_vc
+    - field.field.block_content.simple_view_carousel.field_vc_preprocess_tabs
+_core:
+  default_config_hash: xydeoDf5D_M3IQZHSWDwy3K9km09vpe5gBsc5bwMt1w
+id: block_content.simple_view_carousel.default
+targetEntityType: block_content
+bundle: simple_view_carousel
+mode: default
+content:
+  field_vc:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+hidden:
+  field_vc_preprocess_tabs: true
+  search_api_excerpt: true

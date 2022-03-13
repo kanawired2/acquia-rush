@@ -1,0 +1,10 @@
+uuid: 10bbccf0-aced-4997-b6c6-a1a229b696bb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NpTA1LUhGJ_k82J2zxU7LqVArnxDaBdsatjK0oI1fsI
+id: simple_tabs
+label: Tabs
+revision: 1
+description: ''

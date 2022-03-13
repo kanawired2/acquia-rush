@@ -1,0 +1,44 @@
+{# The template default set classes. #}
+{# Sets Block ID as class. #}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'block-layoutcomponents',
+    'block-layoutcomponents-parent'
+  ]
+%}
+
+{% set block_id = 'accordion-' ~ plugin_id|clean_class %}
+{% set container = content.container %}
+<div {{ container.attributes }}>
+  <div id="accordion-{{ container.id }}" {{ attributes.addClass(classes) }}>
+    <div class="card">
+      {% for key, item in container.content.field_sa_accordion_item if key|first != '#' %}
+        {% if loop.first %}
+          {% set collapsed = '' %}
+          {% set show_accordion = ' show' %}
+          {% set aria = 'true' %}
+        {% else %}
+          {% set collapsed = 'collapsed' %}
+          {% set show_accordion = '' %}
+          {% set aria = 'false' %}
+        {% endif %}
+        <div {{ item.header_attributes }}>
+          <h5 class="mb-0">
+            <button class="btn btn-link w-100 {{ collapsed }}" data-toggle="collapse" data-target="#collapse-{{ item.uuid }}-{{ key }}" aria-expanded="{{ aria }}" aria-controls="collapse-{{ item.uuid }}-{{ key }}">
+              {{ item.field_sa_title  }}
+            </button>
+          </h5>
+        </div>
+        <div id="collapse-{{ item.uuid }}-{{ key }}" {{ item.card_attributes.addClass(show_accordion) }} data-parent="#accordion-{{ container.id }}">
+          <div class="card-body">
+            {{ item.field_sa_description }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+uuid: a20575e1-260d-4466-bde5-62f2c72e0db1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_height
+id: block_content.simple_image.field_si_height
+field_name: field_si_height
+entity_type: block_content
+bundle: simple_image
+label: Height
+description: 'Set the height of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 2048
+  prefix: ''
+  suffix: ''
+field_type: integer

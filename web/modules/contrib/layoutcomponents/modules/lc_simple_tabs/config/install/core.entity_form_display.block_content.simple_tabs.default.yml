@@ -1,0 +1,88 @@
+uuid: 27f79263-6667-44d4-9ce0-484ee3f8328e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tabs
+    - field.field.block_content.simple_tabs.field_st_item
+    - field.field.block_content.simple_tabs.field_sta_extra_class
+  module:
+    - field_group
+    - inline_entity_form
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - group_general
+        - group_styles
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Info
+    group_general:
+      children:
+        - field_st_item
+      parent_name: group_info
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: General
+    group_styles:
+      children:
+        - field_sta_extra_class
+      parent_name: group_info
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Styles
+_core:
+  default_config_hash: FcnVCFX0RZgUA8nL8tfcdVo7oO74oKyNBqWlcKbZUT0
+id: block_content.simple_tabs.default
+targetEntityType: block_content
+bundle: simple_tabs
+mode: default
+content:
+  field_st_item:
+    weight: 1
+    settings:
+      form_mode: default
+      revision: true
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_existing: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_sta_extra_class:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  info: true

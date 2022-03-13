@@ -1,0 +1,26 @@
+uuid: 47ebb3fa-b801-4e58-84c3-fabb3a2ba421
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text
+    - field.storage.block_content.field_st_long_text
+  module:
+    - text
+_core:
+  default_config_hash: 09ZmJnI771p7u1VR21Zjh83ubNlv_2h1uVpb5bVxybk
+id: block_content.simple_text.field_st_long_text
+field_name: field_st_long_text
+entity_type: block_content
+bundle: simple_text
+label: 'Long text'
+description: 'Set the text'
+required: false
+translatable: true
+default_value:
+  -
+    value: "<p>My text</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

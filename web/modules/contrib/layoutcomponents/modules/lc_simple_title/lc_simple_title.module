@@ -1,0 +1,271 @@
+<?php
+
+/**
+ * @file
+ * LC Simple text module file.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_title_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_title' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_title_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_title/lc_simple_title';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function lc_simple_title_preprocess_field(&$variables) {
+  if ($variables['field_name'] == "field_sti_text") {
+    /** @var  \Drupal\layoutcomponents\LcLayoutsManager $helper */
+    $helper = \Drupal::service("plugin.manager.layoutcomponents_layouts");
+
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $variables['element']["#object"];
+    $block_id = str_replace(' ', '_', $block->uuid());
+
+    foreach ($variables['items'] as $i => $item) {
+      // Default.
+      $classes = [
+        'lc-inline_block_' . $block_id . '-title-edit',
+        'pl-0',
+        'pr-0',
+        'd-flex',
+      ];
+
+      $styles = [];
+
+      // Values.
+      $text = $block->get('field_sti_text')->getString();
+      $color = $block->get('field_sti_color')->getString();
+      $size = $block->get('field_sti_size')->getString();
+      $align = $block->get('field_sti_align')->getString();
+      $margin_top = $block->get('field_sti_margin_top')->getString();
+      $margin_bottom = $block->get('field_sti_margin_bottom')->getString();
+      $extra_class = $block->get('field_sti_extra_class')->getString();
+      $extra_attributes = $block->get('field_sti_extra_attributes')->getString();
+
+      // Set color.
+      if (!empty($color)) {
+        $styles[] = "color: $color";
+      }
+
+      // Set font size.
+      if (!empty($size)) {
+        $styles[] = "font-size: " . $size . "px";
+      }
+
+      // Set font size.
+      if (!empty($align)) {
+        $classes[] = $align;
+      }
+
+      // Set margin top.
+      if (!empty($margin_top)) {
+        $styles[] = "margin-top: " . $margin_top . "px;";
+      }
+
+      // Set margin bottom.
+      if (!empty($margin_bottom)) {
+        $styles[] = "margin-bottom: " . $margin_bottom . "px;";
+      }
+
+      // Set classes.
+      if (!empty($extra_class)) {
+        $extra_class = explode(" ", $extra_class);
+        $classes = array_merge($classes, $extra_class);
+      }
+
+      // Set attributes.
+      $ex_attributes = [];
+      if (!empty($extra_attributes)) {
+        $parts = explode(" ", $extra_attributes);
+        foreach ($parts as $attribute) {
+          if (strpos($attribute, '|') !== FALSE) {
+            list($key, $value) = explode('|', $attribute);
+            $ex_attributes[$key] = $value;
+          }
+        }
+      }
+
+      // Set new classes and styles.
+      $attributes = [
+        'class' => $classes,
+        'style' => implode(";", $styles),
+      ];
+
+      // Merge new attributes.
+      $attributes = array_merge($attributes, $ex_attributes);
+      $variables['items'][$i]['content']['#attributes'] = $attributes;
+
+      // Create text container.
+      $container = [
+        '#type' => "container",
+        '#attributes' => $attributes,
+        'content' => $variables['items'][$i]['content'],
+      ];
+
+      $variables['items'][$i]['content'] = $container;
+    }
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function lc_simple_title_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#bundle'] == 'simple_title') {
+    if (!array_key_exists('#default_value', $entity_form) || !isset($entity_form['#default_value'])) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_title_form_alter($entity_form, $block_id);
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_title_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_title") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_title_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_title_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC inline ckeditor text.
+  $input = $form['field_sti_text']['widget'][0];
+  $form['field_sti_text']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'input' => 'ckeditor',
+      'type' => 'text',
+      'element' => 'text',
+    ],
+    $input
+  );
+
+  // LC inline text color.
+  $text_color = $form['field_sti_color']['widget'][0];
+  $form['field_sti_color']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'type' => 'style',
+      'style' => 'color',
+      'element' => 'color',
+      'class' => 'text_color',
+    ],
+    $text_color
+  );
+
+  // LC inline text size.
+  $text_size = $form['field_sti_size']['widget'][0]['value'];
+  $form['field_sti_size']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'type' => 'style',
+      'style' => 'font-size',
+      'element' => 'slider',
+      'class' => 'text_size',
+    ],
+    $text_size
+  );
+
+  // LC inline margin top.
+  $margin_top = &$form['field_sti_margin_top']['widget'][0]['value'];
+  $form['field_sti_margin_top']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'input' => 'ckeditor',
+      'type' => 'style',
+      'style' => 'margin-top',
+      'element' => 'slider',
+    ],
+    $margin_top
+  );
+
+  // LC inline margin bottom.
+  $margin_bottom = &$form['field_sti_margin_bottom']['widget'][0]['value'];
+  $form['field_sti_margin_bottom']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'input' => 'ckeditor',
+      'type' => 'style',
+      'style' => 'margin-bottom',
+      'element' => 'slider',
+    ],
+    $margin_bottom
+  );
+
+  // LC inline align.
+  $align = $form['field_sti_align']['widget'];
+  $form['field_sti_align']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'type' => 'class',
+      'style' => 'align',
+      'class_remove' => 'justify-content-*',
+      'element' => 'select',
+      'class' => 'align',
+    ],
+    $align
+  );
+
+  // LC inline extra class.
+  $extra_class = &$form['field_sti_extra_class']['widget'][0]['value'];
+  $form['field_sti_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+
+  // LC extra attributes.
+  $extra_attributes = &$form['field_sti_extra_attributes']['widget'][0]['value'];
+  $form['field_sti_extra_attributes']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-title',
+      'input' => 'text',
+      'type' => 'attribute',
+      'style' => 'extra_attributes',
+      'element' => 'text',
+    ],
+    $extra_attributes
+  );
+}

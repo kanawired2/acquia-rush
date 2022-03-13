@@ -1,0 +1,32 @@
+title_text: ''
+title_color:
+  settings:
+    color: '#000000'
+    opacity: '1'
+title_type: h1
+title_align: text-left
+title_size: '0'
+title_border: none
+title_border_size: '0'
+title_border_color:
+  settings:
+    color: '#f75461'
+    opacity: '1'
+background_color:
+  settings:
+    color: ''
+    opacity: '1'
+border_type: none
+border_size: '0'
+border_color:
+  settings:
+    color: ''
+    opacity: '1'
+border_radius_top_left: '0'
+border_radius_top_right: '0'
+border_radius_bottom_left: '0'
+border_radius_bottom_right: '0'
+remove_paddings: 0
+remove_left_padding: 0
+remove_right_padding: 0
+extra_class: ''

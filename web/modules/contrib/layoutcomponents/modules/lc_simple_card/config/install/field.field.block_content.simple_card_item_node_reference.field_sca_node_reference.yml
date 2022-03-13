@@ -1,0 +1,29 @@
+uuid: 9e31fe57-04ca-44a5-b2c2-02c74bb1c562
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card_item_node_reference
+    - field.storage.block_content.field_sca_node_reference
+    - node.type.page
+id: block_content.simple_card_item_node_reference.field_sca_node_reference
+field_name: field_sca_node_reference
+entity_type: block_content
+bundle: simple_card_item_node_reference
+label: 'Node reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: page
+field_type: entity_reference

@@ -1,0 +1,30 @@
+uuid: 91dd041b-f864-4fc6-9c60-bfc40fda2237
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_view_carousel
+    - field.field.block_content.simple_view_carousel.field_vc
+    - field.field.block_content.simple_view_carousel.field_vc_preprocess_tabs
+_core:
+  default_config_hash: 4w_vcP0ib1bOJw6CSS16YI2q-9zduJzdbr86GQ9dTNo
+id: block_content.simple_view_carousel.default
+targetEntityType: block_content
+bundle: simple_view_carousel
+mode: default
+content:
+  field_vc:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_vc_preprocess_tabs:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  info: true

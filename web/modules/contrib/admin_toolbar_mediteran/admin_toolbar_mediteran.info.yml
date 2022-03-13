@@ -1,0 +1,13 @@
+name: 'Admin Toolbar Mediteran'
+core: 8.x
+core_version_requirement: ^8 || ^9
+description: 'Replicates the UI improvements of Admin Toolbar module as Mediteran Drupal 8 UI'
+package: 'administration'
+type: module
+dependencies:
+  - admin_toolbar:admin_toolbar
+
+# Information added by Drupal.org packaging script on 2020-11-10
+version: '8.x-1.16'
+project: 'admin_toolbar_mediteran'
+datestamp: 1605023087

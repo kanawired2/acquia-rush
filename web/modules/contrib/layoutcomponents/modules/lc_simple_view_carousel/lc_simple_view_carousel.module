@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * LC Simple View Carrousel module file.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Views;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_view_carousel_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_view_carousel/lc_simple_view_carousel';
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_view_carousel_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_view_carousel") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+    // Include the warning.
+    $form['warning'] = [
+      '#type' => 'markup',
+      '#markup' => '<span class="warning"><div class="js-form-item form-item js-form-type-select form-type-select text-danger">' . t('The text of each tab will be collected from the "field_tab_pagination_text" field of each type of content') . '</div></span>',
+      '#weight' => '999',
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function lc_simple_view_carousel_preprocess_block(&$variables) {
+  if ($variables['base_plugin_id'] != 'inline_block') {
+    return;
+  }
+
+  if ($variables['derivative_plugin_id'] != 'simple_view_carousel') {
+    return;
+  }
+
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['content']['#block_content'];
+  $block_slick = $variables['content']['#attributes']['class'][] = 'block-inline-blocksimple-view-carousel-' . $block->id();
+
+  // The view id home_carousel-slider.
+  $id = $block->get('field_vc')->getString();
+  $preprocess_tabs = $block->get('field_vc_preprocess_tabs')->getString();
+
+  if (!empty($id)) {
+    /** @var \Drupal\views\ViewExecutable $view */
+    $view = Views::getView($id);
+
+    // Render the view.
+    $variables['content']['field_vc'][0] = $view->render('default');
+
+    // The items of the carousel.
+    if (!array_key_exists('#build', $variables['content']['field_vc'][0]['#rows'])) {
+      return;
+    }
+
+    $items = $variables['content']['field_vc'][0]['#rows']['#build']['items'];
+    $js_settings = [
+      'id' => $block_slick,
+    ];
+
+    // Find the values for the dots.
+    if (boolval($preprocess_tabs)) {
+      foreach ($items as $i => $item) {
+        /** @var \Drupal\node\Entity\Node $node */
+        $node = $item['slide']['#node'];
+        if ($node->hasField('field_tab_pagination_text')) {
+          $js_settings['items'][] = [
+            'title' => $node->get('field_tab_pagination_text')->getString(),
+          ];
+        }
+      }
+    }
+
+
+    // Add custom libraries.
+    $variables['#attached']['library'][] = 'lc_simple_view_carousel/lc_simple_view_carousel';
+    $variables['#attached']['drupalSettings']['homeCarousel']['items'][$block_slick] = $js_settings;
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_view_carousel_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_view_carousel':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_view_carousel')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}

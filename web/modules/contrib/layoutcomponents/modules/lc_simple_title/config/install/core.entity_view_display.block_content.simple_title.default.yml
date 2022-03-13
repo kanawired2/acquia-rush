@@ -1,0 +1,39 @@
+uuid: 92da92d2-9e9c-4cf5-86b3-7b9bba91b258
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.field.block_content.simple_title.field_sti_align
+    - field.field.block_content.simple_title.field_sti_color
+    - field.field.block_content.simple_title.field_sti_extra_attributes
+    - field.field.block_content.simple_title.field_sti_extra_class
+    - field.field.block_content.simple_title.field_sti_margin_bottom
+    - field.field.block_content.simple_title.field_sti_margin_top
+    - field.field.block_content.simple_title.field_sti_size
+    - field.field.block_content.simple_title.field_sti_text
+  module:
+    - text
+_core:
+  default_config_hash: O5OxU4Ju8K947kOhBfagtrlwthqvZoSL5k1kN1ZbQHo
+id: block_content.simple_title.default
+targetEntityType: block_content
+bundle: simple_title
+mode: default
+content:
+  field_sti_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_sti_align: true
+  field_sti_color: true
+  field_sti_extra_attributes: true
+  field_sti_extra_class: true
+  field_sti_margin_bottom: true
+  field_sti_margin_top: true
+  field_sti_size: true
+  langcode: true

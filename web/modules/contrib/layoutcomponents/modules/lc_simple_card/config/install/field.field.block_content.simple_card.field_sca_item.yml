@@ -1,0 +1,33 @@
+uuid: bef42146-fe55-4cd2-b1ba-928a1918885e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card
+    - block_content.type.simple_card_item_node_reference
+    - field.storage.block_content.field_sca_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 2rHBPXyFO58ugKfSZxW47TWO7B3jT4P1Cz4oYLKPQ0g
+id: block_content.simple_card.field_sca_item
+field_name: field_sca_item
+entity_type: block_content
+bundle: simple_card
+label: 'Node item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      simple_card_item_node_reference: simple_card_item_node_reference
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

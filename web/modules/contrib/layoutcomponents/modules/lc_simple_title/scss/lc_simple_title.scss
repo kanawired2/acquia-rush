@@ -1,0 +1,15 @@
+// out: ../css/lc_text.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+#drupal-off-canvas {
+  ul {
+    li {
+      a.inline-block-list__item.simple_text {
+        &:before {
+          content: "\f891";
+          font-family: FontAwesome;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}

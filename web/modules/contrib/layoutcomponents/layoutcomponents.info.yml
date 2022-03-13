@@ -1,0 +1,36 @@
+name: Layout Components
+type: module
+description: Blocks for placing into layout builder.
+core_version_requirement: ^8.8 || ^9
+configure: layoutcomponents.settings_general
+package: LayoutComponents
+dependencies:
+  - ctools:ctools
+  - drupal:layout_builder
+  - drupal:ckeditor
+  - drupal:field
+  - drupal:field_group
+  - drupal:file
+  - drupal:filter
+  - drupal:options
+  - drupal:system
+  - drupal:text
+  - drupal:user
+  - drupal:video_embed_field
+  - drupal:views
+  - entity_reference_revisions:entity_reference_revisions
+  - drupal:media
+  - drupal:media_library
+  - linked_field:linked_field
+  - color_field:color_field
+  - media_library_form_element:media_library_form_element
+  - drupal:inline_entity_form
+  - block_form_alter:block_form_alter
+  - drupal:jquery_ui_slider
+  - drupal:jquery_ui_tooltip
+  - sliderwidget
+
+# Information added by Drupal.org packaging script on 2021-07-09
+version: '3.0.0'
+project: 'layoutcomponents'
+datestamp: 1625856471

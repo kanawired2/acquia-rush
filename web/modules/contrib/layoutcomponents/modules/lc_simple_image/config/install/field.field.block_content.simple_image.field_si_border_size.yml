@@ -1,0 +1,25 @@
+uuid: 0483d2e0-b0de-46df-8457-c28e0e2cdca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_border_size
+id: block_content.simple_image.field_si_border_size
+field_name: field_si_border_size
+entity_type: block_content
+bundle: simple_image
+label: Size
+description: 'Set the border size'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

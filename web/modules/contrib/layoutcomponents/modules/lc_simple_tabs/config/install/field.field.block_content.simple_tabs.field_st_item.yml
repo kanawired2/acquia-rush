@@ -1,0 +1,30 @@
+uuid: 1c8a512d-d38f-4bc0-85d4-e3360ef5a329
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tab_item
+    - block_content.type.simple_tabs
+    - field.storage.block_content.field_st_item
+  module:
+    - entity_reference_revisions
+id: block_content.simple_tabs.field_st_item
+field_name: field_st_item
+entity_type: block_content
+bundle: simple_tabs
+label: Item
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      simple_tab_item: simple_tab_item
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

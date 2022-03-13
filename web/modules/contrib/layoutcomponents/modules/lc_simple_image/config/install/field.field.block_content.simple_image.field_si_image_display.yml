@@ -1,0 +1,21 @@
+uuid: d5d01a56-90a6-4164-a6c8-c419123bdc71
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_image_display
+  module:
+    - options
+id: block_content.simple_image.field_si_image_display
+field_name: field_si_image_display
+entity_type: block_content
+bundle: simple_image
+label: Display
+description: 'Set the display of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

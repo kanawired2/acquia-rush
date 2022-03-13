@@ -1,0 +1,19 @@
+uuid: 659963bd-7126-468e-91ce-35709d24c574
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text
+    - field.storage.block_content.field_st_extra_class
+id: block_content.simple_text.field_st_extra_class
+field_name: field_st_extra_class
+entity_type: block_content
+bundle: simple_text
+label: 'Extra classes'
+description: 'Set the extra classes of this text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

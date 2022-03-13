@@ -1,0 +1,33 @@
+uuid: 2e7b7f4d-8eef-4808-bc9f-914f4bc264b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_sv_video_ratio
+field_name: field_sv_video_ratio
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 1by1
+      label: '1:1'
+    -
+      value: 4by3
+      label: '4:3'
+    -
+      value: 16by9
+      label: '16:9'
+    -
+      value: 21by9
+      label: '21:9'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

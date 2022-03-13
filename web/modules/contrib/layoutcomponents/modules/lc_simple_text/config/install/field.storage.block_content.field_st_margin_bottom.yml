@@ -1,0 +1,20 @@
+uuid: 705ade10-4f5f-4e79-987a-6cca5bb5f711
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_st_margin_bottom
+field_name: field_st_margin_bottom
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

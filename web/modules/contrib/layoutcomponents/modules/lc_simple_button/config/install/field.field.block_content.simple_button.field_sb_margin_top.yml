@@ -1,0 +1,23 @@
+uuid: 69018a85-f08a-47da-8160-3d1c09d7992e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_margin_top
+id: block_content.simple_button.field_sb_margin_top
+field_name: field_sb_margin_top
+entity_type: block_content
+bundle: simple_button
+label: 'Margin top'
+description: 'Set the margin-top of this button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 500
+  prefix: ''
+  suffix: ''
+field_type: integer

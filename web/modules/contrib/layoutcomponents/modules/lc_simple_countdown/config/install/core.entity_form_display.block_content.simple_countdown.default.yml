@@ -1,0 +1,154 @@
+uuid: 76485437-f9e1-4a63-a7b3-c103ce3f7a42
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_countdown
+    - field.field.block_content.simple_countdown.field_sc_color
+    - field.field.block_content.simple_countdown.field_sc_date
+    - field.field.block_content.simple_countdown.field_sc_size
+    - field.field.block_content.simple_countdown.field_sc_title
+  module:
+    - color_field
+    - datetime
+    - field_group
+    - inline_entity_form
+    - sliderwidget
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - group_general
+        - group_styles
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Info
+      region: content
+    group_general:
+      children:
+        - field_sc_title
+        - field_sc_date
+      parent_name: group_info
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: General
+      region: content
+    group_styles:
+      children:
+        - group_sizing
+        - group_color
+      parent_name: group_info
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Styles
+      region: content
+    group_sizing:
+      children:
+        - field_sc_size
+      parent_name: group_styles
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: Sizing
+    group_color:
+      children:
+        - field_sc_color
+      parent_name: group_styles
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: false
+      label: Color
+_core:
+  default_config_hash: rMlUnqQjTYI2H0O_Yb1-GyB8TICgyzPBZ7L4Eg-wtM0
+id: block_content.simple_countdown.default
+targetEntityType: block_content
+bundle: simple_countdown
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sc_color:
+    weight: 23
+    settings:
+      default_colors: '#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46,#42D692,#16A765,#7BD148,#B3DC6C,#FBE983,#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF,#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2,#CD74E6,#A47AE2,#FFFFFF,#000000,#152B73'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_sc_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_sc_size:
+    weight: 27
+    settings:
+      sliderwidget_settings:
+        animate: false
+        orientation: horizontal
+        range: false
+        step: 1
+        slider_style: null
+        display_values: true
+        multi_value: false
+        display_values_format: '%{value}%'
+        display_bubble: false
+        display_bubble_format: '%{value}%'
+        slider_length: null
+        hide_inputs: true
+        hide_slider_handle_when_no_value: false
+    third_party_settings: {  }
+    type: sliderwidget_widget
+    region: content
+  field_sc_title:
+    type: inline_entity_form_simple
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  info: true
+  status: true

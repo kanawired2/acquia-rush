@@ -1,0 +1,21 @@
+uuid: 7b0b904d-b6c4-43b8-a645-42fabd7d6893
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - video_embed_field
+_core:
+  default_config_hash: sKEUgKyXhEgJC8jCpyLCQfFvmvcVimMTSx6k09TlkQM
+id: block_content.field_sv_video
+field_name: field_sv_video
+entity_type: block_content
+type: video_embed_field
+settings: {  }
+module: video_embed_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

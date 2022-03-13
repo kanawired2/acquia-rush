@@ -1,0 +1,15 @@
+// out: ../css/lc_simple_countdown.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+#drupal-off-canvas {
+  ul {
+    li {
+      a.inline-block-list__item.simple_countdown {
+        &:before {
+          content: "\f254";
+          font-family: FontAwesome;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}

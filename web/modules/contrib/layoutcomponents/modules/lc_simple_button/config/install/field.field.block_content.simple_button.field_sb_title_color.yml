@@ -1,0 +1,24 @@
+uuid: cce6de1a-c187-42c7-82d6-2bd3013a22ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_title_color
+  module:
+    - color_field
+_core:
+  default_config_hash: b9g2-V5_auxrgTEff6jTir2cfnJOFNhBW1cQlGBcBVk
+id: block_content.simple_button.field_sb_title_color
+field_name: field_sb_title_color
+entity_type: block_content
+bundle: simple_button
+label: 'Title color'
+description: 'Set the title color of this button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

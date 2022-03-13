@@ -1,0 +1,22 @@
+uuid: a6b76e0e-05d0-474d-a3f2-888300749363
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+_core:
+  default_config_hash: bT1WNu_TgQFcYGsH6b4_7ouyMdhBmNvswBpUOGM55fs
+id: block_content.field_sa_accordion_item
+field_name: field_sa_accordion_item
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: block_content
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

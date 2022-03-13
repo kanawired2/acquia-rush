@@ -1,0 +1,25 @@
+uuid: 6e72ee25-8999-4554-820a-3f9d51c41f19
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_width
+id: block_content.simple_image.field_si_width
+field_name: field_si_width
+entity_type: block_content
+bundle: simple_image
+label: Width
+description: 'Set the width of this image'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

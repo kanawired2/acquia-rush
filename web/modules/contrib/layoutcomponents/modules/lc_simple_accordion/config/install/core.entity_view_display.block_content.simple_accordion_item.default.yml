@@ -1,0 +1,36 @@
+uuid: 01c30eae-836d-4e55-86b0-d2586fe9daa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_accordion_item
+    - field.field.block_content.simple_accordion_item.field_sa_description
+    - field.field.block_content.simple_accordion_item.field_sa_title
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: xsY7gG2I4J6B-7RttchwLGncvr_twhzi2diwvjBHsFI
+id: block_content.simple_accordion_item.default
+targetEntityType: block_content
+bundle: simple_accordion_item
+mode: default
+content:
+  field_sa_description:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_sa_title:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden: {  }

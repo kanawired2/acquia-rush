@@ -1,0 +1,19 @@
+uuid: 327d4d59-6947-4f7c-89b5-212aa9ed9c84
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_extra_attributes
+id: block_content.simple_button.field_sb_extra_attributes
+field_name: field_sb_extra_attributes
+entity_type: block_content
+bundle: simple_button
+label: 'Extra attributes'
+description: 'Set the extra attributes of this button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

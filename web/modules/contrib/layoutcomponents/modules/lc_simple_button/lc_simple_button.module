@@ -1,0 +1,464 @@
+<?php
+
+/**
+ * @file
+ * LC Simple button module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function lc_simple_button_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Create help page.
+    case 'help.page.lc_simple_button':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('lc_simple_button')->getPath();
+      $file = $module_path . '/README.md';
+      if (!file_exists($file)) {
+        return '';
+      }
+
+      // Get content from file.
+      $reader = file_get_contents($file);
+
+      // Return "clean" content.
+      return preg_replace("/\r\n|\n|\r/", "<br>", $reader);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_button_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_button' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_button_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_button/lc_simple_button';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function lc_simple_button_preprocess_field(&$variables) {
+  if ($variables['field_name'] == "field_sb_url") {
+    /** @var  \Drupal\layoutcomponents\LcLayoutsManager $helper */
+    $helper = \Drupal::service("plugin.manager.layoutcomponents_layouts");
+
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $variables['element']["#object"];
+    $block_id = str_replace(' ', '_', $block->uuid());
+
+    foreach ($variables['items'] as $i => $item) {
+
+      // Default.
+      $styles = [];
+      $classes = [
+        'btn',
+        'lc-inline_block_' . $block_id . '-button-edit',
+      ];
+
+      // Title.
+      $text_size = $block->get('field_sb_title_size')->getString();
+      $text_color = $block->get('field_sb_title_color')->getString();
+
+      // Background.
+      $background_color = $block->get('field_sb_background_color')->getString();
+
+      // Border.
+      $border_type = $block->get('field_sb_border_type')->getString();
+      $border_size = $block->get('field_sb_border_size')->getString();
+      $border_color = $block->get('field_sb_border_color')->getString();
+
+      // Margins.
+      $align = $block->get('field_sb_align')->getString();
+      $margin_top = $block->get('field_sb_margin_top')->getString();
+      $margin_bottom = $block->get('field_sb_margin_bottom')->getString();
+
+      // Paddings.
+      $padding_top = $block->get('field_sb_padding_top')->getString();
+      $padding_bottom = $block->get('field_sb_padding_bottom')->getString();
+
+      // Sizing.
+      $width = $block->get('field_sb_width')->getString();
+
+      // Misc.
+      $extra_class = $block->get('field_sb_extra_class')->getString();
+      $extra_attributes = $block->get('field_sb_extra_attributes')->getString();
+
+      // Set title.
+      if (!empty($text_size)) {
+        $styles[] = "font-size: " . $text_size . "px";
+      }
+
+      if (!empty($text_color)) {
+        $styles[] = "color: " . $text_color;
+      }
+
+      // Set background.
+      if (!empty($background_color)) {
+        // By now the opacity cannot be changed by LC Inline.
+        $opacity = 1;
+        $rgba = $helper->hexToRgba($background_color, $opacity);
+        $styles[] = "background: " . $rgba;
+      }
+
+      // Set border color.
+      if (!empty($border_type) && $border_type != 'none') {
+        $border = 'border';
+        if ($border_type != 'all') {
+          $border .= '-' . $border_type;
+        }
+        $styles[] = "$border: " . $border_size . "px solid $border_color";
+      }
+
+      // Set margin top.
+      if (!empty($margin_top)) {
+        $styles[] = "margin-top: " . $margin_top . "px;";
+      }
+
+      // Set margin bottom.
+      if (!empty($margin_bottom)) {
+        $styles[] = "margin-bottom: " . $margin_bottom . "px;";
+      }
+
+      // Set padding top.
+      if (!empty($padding_top)) {
+        $styles[] = "padding-top: " . $padding_top . "px;";
+      }
+
+      // Set padding bottom.
+      if (!empty($padding_bottom)) {
+        $styles[] = "padding-bottom: " . $padding_bottom . "px;";
+      }
+
+      // Set width.
+      if (!empty($width)) {
+        if ($width > 0) {
+          $styles[] = "width: " . $width . "%;";
+        }
+        else {
+          $styles[] = "width: 100%;";
+        }
+      }
+
+      // Set classes.
+      if (!empty($extra_class)) {
+        $extra_class = explode(" ", $extra_class);
+        $classes = array_merge($classes, $extra_class);
+      }
+
+      // Set attributes.
+      $ex_attributes = [];
+      if (!empty($extra_attributes)) {
+        $parts = explode(" ", $extra_attributes);
+        foreach ($parts as $attribute) {
+          if (strpos($attribute, '|') !== FALSE) {
+            list($key, $value) = explode('|', $attribute);
+            $ex_attributes[$key] = $value;
+          }
+        }
+      }
+
+      // Set new classes and styles.
+      $attributes = [
+        'class' => $classes,
+        'style' => implode(";", $styles),
+      ];
+
+      // Merge new attributes.
+      $attributes = array_merge($attributes, $ex_attributes);
+      $variables['items'][$i]['content']['#attributes'] = $attributes;
+
+      // Create image container.
+      $container = [
+        '#type' => "container",
+        '#attributes' => [
+          'class' => [
+            "lc-inline_block_$block_id-button-container-edit",
+            "pl-0",
+            "pr-0",
+            "d-flex",
+            $align,
+          ],
+        ],
+        'content' => $variables['items'][$i]['content'],
+      ];
+
+      $variables['items'][$i]['content'] = $container;
+    }
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function lc_simple_button_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  if ($entity_form['#bundle'] == 'simple_button') {
+    if (!array_key_exists('#default_value', $entity_form) || !isset($entity_form['#default_value'])) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity_form['#default_value'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_button_form_alter($entity_form, $block_id);
+  }
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_button_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_button") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_button_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_button_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC inline url.
+  $url = $form['field_sb_url']['widget'][0];
+  $form['field_sb_url']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'element' => 'url',
+    ],
+    $url
+  );
+
+  // LC inline url text.
+  $url_text = $form['field_sb_url']['widget'][0]['title'];
+  $url_text['#description'] = t('Set the text of this url');
+  $form['field_sb_url']['widget'][0]['title'] = $lcApi->getComponentElement(
+    [
+      'element' => 'url',
+    ],
+    $url_text
+  );
+
+  // LC inline text size.
+  $text_size = $form['field_sb_title_size']['widget'][0]['value'];
+  $form['field_sb_title_size']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'font-size',
+      'min' => 1,
+      'max' => 100,
+      'element' => 'slider',
+      'class' => 'text_size',
+    ],
+    $text_size
+  );
+
+  // LC inline text color.
+  $text_color = $form['field_sb_title_color']['widget'][0];
+  $form['field_sb_title_color']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'color',
+      'element' => 'color',
+      'class' => 'text_color',
+    ],
+    $text_color
+  );
+
+  // LC inline background color.
+  $background_color = $form['field_sb_background_color']['widget'][0];
+  $form['field_sb_background_color']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'background-color',
+      'element' => 'color',
+      'class' => 'text_color',
+    ],
+    $background_color
+  );
+
+  // LC inline border type.
+  $border_type = $form['field_sb_border_type']['widget'];
+  $form['field_sb_border_type']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'border',
+      'depend' => [
+        'size' => "lc-inline_block_$block_id-button-border_size",
+        'color' => "lc-inline_block_$block_id-button-border_color",
+      ],
+      'element' => 'select',
+      'class' => 'border_type',
+    ],
+    $border_type
+  );
+
+  // LC inline border size.
+  $border_size = $form['field_sb_border_size']['widget'][0]['value'];
+  $form['field_sb_border_size']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'input' => 'slider',
+      'type' => 'style',
+      'style' => 'border-size',
+      'depend' => [
+        'type' => "lc-inline_block_$block_id-button-border_type",
+        'color' => "lc-inline_block_$block_id-button-border_color",
+      ],
+      'element' => 'slider',
+      'class' => 'border_size',
+    ],
+    $border_size
+  );
+
+  // LC inline border color.
+  $border_color = $form['field_sb_border_color']['widget'][0];
+  $form['field_sb_border_color']['widget'][0] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'border-color',
+      'depend' => [
+        'type' => "lc-inline_block_$block_id-button-border_type",
+        'size' => "lc-inline_block_$block_id-button-border_size",
+      ],
+      'element' => 'color',
+      'class' => 'border_color',
+    ],
+    $border_color
+  );
+
+  // LC inline align.
+  $align = $form['field_sb_align']['widget'];
+  $form['field_sb_align']['widget'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button-container',
+      'type' => 'class',
+      'style' => 'align',
+      'class_remove' => 'justify-content-*',
+      'element' => 'select',
+      'class' => 'align',
+    ],
+    $align
+  );
+
+  // LC inline margin top.
+  $margin_top = $form['field_sb_margin_top']['widget'][0]['value'];
+  $form['field_sb_margin_top']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'margin-top',
+      'element' => 'slider',
+      'class' => 'margin_top',
+    ],
+    $margin_top
+  );
+
+  // LC inline margin bottom.
+  $margin_bottom = $form['field_sb_margin_bottom']['widget'][0]['value'];
+  $form['field_sb_margin_bottom']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'margin-bottom',
+      'element' => 'slider',
+      'class' => 'margin_bottom',
+    ],
+    $margin_bottom
+  );
+
+  // LC inline padding top.
+  $padding_top = $form['field_sb_padding_top']['widget'][0]['value'];
+  $form['field_sb_padding_top']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'padding-top',
+      'element' => 'slider',
+      'class' => 'padding_top',
+    ],
+    $padding_top
+  );
+
+  // LC inline padding bottom.
+  $padding_bottom = $form['field_sb_padding_bottom']['widget'][0]['value'];
+  $form['field_sb_padding_bottom']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'padding-bottom',
+      'element' => 'slider',
+      'class' => 'padding_bottom',
+    ],
+    $padding_bottom
+  );
+
+  // LC inline width.
+  $width = $form['field_sb_width']['widget'][0]['value'];
+  $form['field_sb_width']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'type' => 'style',
+      'style' => 'width',
+      'element' => 'slider',
+      'class' => 'width',
+    ],
+    $width
+  );
+
+  // LC inline extra class.
+  $extra_class = $form['field_sb_extra_class']['widget'][0]['value'];
+  $form['field_sb_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+
+  // LC extra attributes.
+  $extra_attributes = &$form['field_sb_extra_attributes']['widget'][0]['value'];
+  $form['field_sb_extra_attributes']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-button',
+      'input' => 'text',
+      'type' => 'attribute',
+      'style' => 'extra_attributes',
+      'element' => 'text',
+    ],
+    $extra_attributes
+  );
+
+}

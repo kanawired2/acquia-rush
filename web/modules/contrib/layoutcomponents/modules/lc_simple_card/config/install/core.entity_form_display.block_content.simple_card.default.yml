@@ -1,0 +1,102 @@
+uuid: 52a1c042-6b4a-4e2e-933a-e6dda18c8666
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card
+    - field.field.block_content.simple_card.field_sca_extra_class
+    - field.field.block_content.simple_card.field_sca_item
+  module:
+    - field_group
+    - inline_entity_form
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - group_general
+        - group_styles
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Info
+    group_general:
+      children:
+        - field_sca_item
+      parent_name: group_info
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: General
+    group_styles:
+      children:
+        - group_misc
+      parent_name: group_info
+      weight: 5
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Styles
+    group_misc:
+      children:
+        - field_sca_extra_class
+      parent_name: group_styles
+      weight: 20
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Misc
+_core:
+  default_config_hash: E-TW8CqMYpcbWxpaPjxQQH_lXJomVZyDlmJNUlGBDfw
+id: block_content.simple_card.default
+targetEntityType: block_content
+bundle: simple_card
+mode: default
+content:
+  field_sca_extra_class:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sca_item:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+hidden:
+  info: true

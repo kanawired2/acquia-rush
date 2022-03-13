@@ -1,0 +1,10 @@
+uuid: 0c798df4-dc0c-4811-aeb5-35f83125b68e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: a6rg6oakwWxP9rFc9KvdkfXeZeJKw5IiaYGfraCv1l4
+id: simple_card
+label: Card
+revision: 1
+description: ''

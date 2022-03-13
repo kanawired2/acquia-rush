@@ -1,0 +1,25 @@
+uuid: f8079703-9896-4288-a6ed-89df4cbfe3d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_margin_top
+_core:
+  default_config_hash: YYfqlJNc7E8-yBrNS_06LGllR2xtI5CRMHjIhaEJzGg
+id: block_content.simple_title.field_sti_margin_top
+field_name: field_sti_margin_top
+entity_type: block_content
+bundle: simple_title
+label: 'Margin Top'
+description: 'Set the margin-top of this title'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,25 @@
+uuid: bafdcc95-dc88-4ed6-beaf-a379ab00dce3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_iframe
+    - field.storage.block_content.field_sif_url
+  module:
+    - link
+_core:
+  default_config_hash: pMEzb5xbEbmDFKWtTJ-6nAspum2-LvJvmXQtRy6Ys1o
+id: block_content.simple_iframe.field_sif_url
+field_name: field_sif_url
+entity_type: block_content
+bundle: simple_iframe
+label: URL
+description: 'Set the url of this iframe'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

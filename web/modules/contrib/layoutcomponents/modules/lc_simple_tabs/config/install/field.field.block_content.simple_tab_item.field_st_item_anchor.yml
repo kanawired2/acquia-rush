@@ -1,0 +1,19 @@
+uuid: 1d83b948-c8b4-44e6-8c8f-1153cbba3f1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_tab_item
+    - field.storage.block_content.field_st_item_anchor
+id: block_content.simple_tab_item.field_st_item_anchor
+field_name: field_st_item_anchor
+entity_type: block_content
+bundle: simple_tab_item
+label: Anchor
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

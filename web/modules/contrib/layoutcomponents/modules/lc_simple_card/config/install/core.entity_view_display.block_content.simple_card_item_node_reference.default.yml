@@ -1,0 +1,24 @@
+uuid: 753748cf-01d3-4705-a465-e1d7927c063a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card_item_node_reference
+    - field.field.block_content.simple_card_item_node_reference.field_sca_node_reference
+_core:
+  default_config_hash: 9ESESrET5xhaaE-G_qnCPHpZef0xfpqHL0hLkujVvxo
+id: block_content.simple_card_item_node_reference.default
+targetEntityType: block_content
+bundle: simple_card_item_node_reference
+mode: default
+content:
+  field_sca_node_reference:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

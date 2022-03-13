@@ -1,0 +1,36 @@
+uuid: 71040b4c-9657-40b2-a68e-07899d542ffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_reference_field
+    - field.field.block_content.simple_reference_field.field_reference_field
+  module:
+    - layoutcomponents
+id: block_content.simple_reference_field.default
+targetEntityType: block_content
+bundle: simple_reference_field
+mode: default
+content:
+  field_reference_field:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: layoutcomponents_entity_reference
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

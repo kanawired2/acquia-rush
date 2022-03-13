@@ -1,0 +1,20 @@
+uuid: 7b2b060e-d300-4167-9b07-c53d8b3d68f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_si_border_radius
+field_name: field_si_border_radius
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

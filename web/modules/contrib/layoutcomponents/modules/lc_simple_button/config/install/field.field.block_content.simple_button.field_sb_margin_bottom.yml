@@ -1,0 +1,25 @@
+uuid: 81991aab-b7fc-4cd5-9e30-0473a462d594
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_margin_bottom
+id: block_content.simple_button.field_sb_margin_bottom
+field_name: field_sb_margin_bottom
+entity_type: block_content
+bundle: simple_button
+label: 'Margin bottom'
+description: 'Set the margin-bottom of this button'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 500
+  prefix: ''
+  suffix: ''
+field_type: integer

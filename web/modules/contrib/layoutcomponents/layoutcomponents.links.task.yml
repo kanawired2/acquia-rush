@@ -1,0 +1,28 @@
+layoutcomponents.general:
+  route_name: layoutcomponents.settings_general
+  title: General
+  base_route: layoutcomponents.settings_general
+
+layoutcomponents.interface:
+  route_name : layoutcomponents.interface_settings
+  title: Interface
+  base_route: layoutcomponents.settings_general
+  weight: 20
+
+layoutcomponents.colors:
+  route_name : layoutcomponents.colors_settings
+  title: Colors
+  base_route: layoutcomponents.settings_general
+  weight: 30
+
+layoutcomponents.section:
+  route_name : layoutcomponents.section_settings
+  title: Section
+  base_route: layoutcomponents.settings_general
+  weight: 40
+
+layoutcomponents.column:
+  route_name : layoutcomponents.column_settings
+  title: Column
+  base_route: layoutcomponents.settings_general
+  weight: 50

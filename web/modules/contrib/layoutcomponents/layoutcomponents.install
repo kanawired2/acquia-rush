@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall and update hooks for Layoutcomponents module.
+ */
+
+use Drupal\layoutcomponents\Entity\LcEntityViewDisplay;
+
+/**
+ * Add the default configuration.
+ */
+function layoutcomponents_update_8001() {
+  $configsNames = [
+    'layoutcomponents.general',
+    'layoutcomponents.interface',
+    'layoutcomponents.colors',
+    'layoutcomponents.section',
+    'layoutcomponents.column',
+  ];
+
+  \Drupal::service('layoutcomponents.update')->updateConfig($configsNames, 'layoutcomponents');
+  return 'Default configuration';
+}
+
+/**
+ * Update the default sections with the new config().
+ */
+function layoutcomponents_update_8002() {
+  /** @var \Drupal\Core\Entity\EntityTypeBundleInfo $bundle_info */
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('node');
+  foreach ($bundles as $id => $bundle) {
+    $displays = \Drupal::entityTypeManager()->getStorage('entity_view_display')->loadByProperties(['bundle' => $id]);
+    foreach ($displays as $display) {
+      if ($display instanceof LcEntityViewDisplay) {
+        $settings = $display->getThirdPartySettings('layout_builder');
+        if (array_key_exists('sections', $settings)) {
+          /** @var \Drupal\layout_builder\Section $section */
+          foreach ($settings['sections'] as $delta => $section) {
+            $section_settings = $section->getLayoutSettings();
+            $section_settings['section']['general']['basic']['section_overwrite'] = FALSE;
+            $section_settings['section']['general']['basic']['section_label'] = \Drupal::currentUser()->id() . (\Drupal::time()->getCurrentTime() + rand()) . $delta;
+            $section_settings['section']['general']['basic']['section_delta'] = $delta;
+            $section->setLayoutSettings($section_settings);
+          }
+          $display->setThirdPartySetting('layout_builder', 'sections', $settings['sections']);
+          $display->save();
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+    "name": "drupal/layoutcomponents",
+    "description": "Fully extension of Layout Builder to implement grid, components, auto preview and a full customization of each field",
+    "type": "drupal-module",
+    "keywords": ["Drupal", "Layout Builder", "Components", "Blocks", "Customization", "Administration"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/layoutcomponents",
+    "authors": [
+        {
+            "name": "David Biescas Gaspar",
+            "email": "dcraig91@gmail.com",
+            "role": "Backend developer"
+        },
+        {
+            "name": "Jose Luis Lopez Martinez",
+            "email": "joseluislopez07@gmail.com",
+            "role": "Frontend developer"
+        },
+        {
+            "name": "Roberto Valentino Da Costa Correa",
+            "email": "tobascosta10@gmail.com",
+            "role": "Backend developer"
+        },
+        {
+            "name": "Alberto Perez Dosaula",
+            "email": "email.albertoperez@gmail.com",
+            "role": "Maintainer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "cweagans/composer-patches": "^1.6",
+        "drupal/bootstrap4": "^2.0",
+        "drupal/linked_field": "*",
+        "drupal/block_form_alter": "*",
+        "drupal/color_field": "*",
+        "drupal/colorbutton": "*",
+        "drupal/field_group": "*",
+        "drupal/jquery_ui_tooltip": "*",
+        "drupal/panelbutton": "*",
+        "drupal/video_embed_field": "*",
+        "drupal/viewsreference": "*",
+        "drupal/webform": "^6.0",
+        "drupal/ctools": "*",
+        "drupal/media_library_form_element": "^1.0",
+        "drupal/inline_entity_form": "*",
+        "drupal/entity_reference_revisions": "^1.7",
+        "drupal/jquery_ui_slider": "^1.1"
+    },
+    "extra": {
+        "patches": {
+            "drupal/core": {
+                "Reorder sections": "https://www.drupal.org/files/issues/2020-03-20/layout_builder_3080606-reorder-layout-sections-29_1.patch"
+            },
+            "drupal/inline_entity_form": {
+                "Block form not saved": "https://www.drupal.org/files/issues/2020-03-04/fix-ief-layout-block-3117510-4.patch"
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-theme-custom"
+            ],
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ]
+        }
+    }
+}

@@ -1,0 +1,19 @@
+uuid: 20d6ebd0-22e8-475a-a233-25883b4a84e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_image
+    - field.storage.block_content.field_si_extra_attributes
+id: block_content.simple_image.field_si_extra_attributes
+field_name: field_si_extra_attributes
+entity_type: block_content
+bundle: simple_image
+label: 'Extra attributes'
+description: 'Set the extra attributes of this image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

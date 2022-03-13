@@ -1,0 +1,29 @@
+uuid: 0a9f5cc1-7f08-4aab-8599-d267ad919519
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+_core:
+  default_config_hash: OLHepuS1jwopRVTrxwsh_ROIrxx4nz1mzhX5RA80Ot8
+id: block_content.field_sv_video_type
+field_name: field_sv_video_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: video_url
+      label: 'Video URL'
+    -
+      value: video_upload
+      label: 'Video Upload'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

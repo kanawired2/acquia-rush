@@ -1,0 +1,20 @@
+uuid: 5bc2e17e-2ec2-41a1-bae7-f2b4e5f0772d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_sb_title_size
+field_name: field_sb_title_size
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,13 @@
+.block-inline-blocksimple-tabs .block-inline-blocksimple-tabs-item {
+  margin: 20px 0!important;
+}
+
+.block-inline-blocksimple-tabs .nav a {
+  display: block;
+}
+
+#drupal-off-canvas ul li a.inline-block-list__item.simple_tabs:before {
+  content: "\f0ce";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

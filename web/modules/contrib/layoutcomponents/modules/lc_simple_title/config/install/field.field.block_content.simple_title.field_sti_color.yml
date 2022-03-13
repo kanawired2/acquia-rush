@@ -1,0 +1,22 @@
+uuid: c233051d-8b65-4710-bb0e-814e42142274
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_color
+  module:
+    - color_field
+id: block_content.simple_title.field_sti_color
+field_name: field_sti_color
+entity_type: block_content
+bundle: simple_title
+label: Color
+description: 'Set the color of this title'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

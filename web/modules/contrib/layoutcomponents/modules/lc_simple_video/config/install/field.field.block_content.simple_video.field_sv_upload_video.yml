@@ -1,0 +1,30 @@
+uuid: c5716a42-6089-4721-91e7-30f06bd08562
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.storage.block_content.field_sv_upload_video
+    - media.type.video
+_core:
+  default_config_hash: uSfcOIpqirMGa5DhyhyzDpkXtVEjbY1TbMxcdrT-iuE
+id: block_content.simple_video.field_sv_upload_video
+field_name: field_sv_upload_video
+entity_type: block_content
+bundle: simple_video
+label: 'Upload video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

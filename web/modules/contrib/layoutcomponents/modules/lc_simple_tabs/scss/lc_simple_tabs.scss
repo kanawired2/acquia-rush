@@ -1,0 +1,25 @@
+// out: ../css/lc_simple_tabs.css, compress: false, sourceMap: false, autoprefixer: false, groupmedia: false
+// mixins variables
+.block-inline-blocksimple-tabs {
+  .block-inline-blocksimple-tabs-item {
+    margin: 20px 0 !important;
+  }
+  .nav {
+    a {
+      display: block;
+    }
+  }
+}
+#drupal-off-canvas {
+  ul {
+    li {
+      a.inline-block-list__item.simple_tabs {
+        &:before {
+          content: "\f0ce";
+          font-family: FontAwesome;
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}

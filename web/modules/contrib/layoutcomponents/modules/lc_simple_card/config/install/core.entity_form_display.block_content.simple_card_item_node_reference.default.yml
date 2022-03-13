@@ -1,0 +1,33 @@
+uuid: 6fa8e637-982a-4f08-98cc-4dd2b83419e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card_item_node_reference
+    - field.field.block_content.simple_card_item_node_reference.field_sca_node_reference
+_core:
+  default_config_hash: I29xumIqIiu-xiiY5gOob2jQXCORxN9bDspwfnwHJks
+id: block_content.simple_card_item_node_reference.default
+targetEntityType: block_content
+bundle: simple_card_item_node_reference
+mode: default
+content:
+  field_sca_node_reference:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

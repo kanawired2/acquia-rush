@@ -1,0 +1,22 @@
+uuid: 25444df1-c068-4be9-9044-faa93928d88d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - views
+_core:
+  default_config_hash: iuN8_ky6fVMcmLEroqNlZvjXpZpKeacP17we3e47HmE
+id: block_content.field_vc
+field_name: field_vc
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

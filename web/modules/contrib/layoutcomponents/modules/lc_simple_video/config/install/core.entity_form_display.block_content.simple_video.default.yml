@@ -1,0 +1,167 @@
+uuid: 011918b0-f873-4c99-85d2-e6bb0a3311d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.field.block_content.simple_video.field_sv_upload_video
+    - field.field.block_content.simple_video.field_sv_video
+    - field.field.block_content.simple_video.field_sv_video_extra_attributes
+    - field.field.block_content.simple_video.field_sv_video_extra_class
+    - field.field.block_content.simple_video.field_sv_video_ratio
+    - field.field.block_content.simple_video.field_sv_video_type
+    - field.field.block_content.simple_video.field_sv_video_veil
+  module:
+    - field_group
+    - media_library
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - group_general
+        - group_styles
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Info
+    group_general:
+      children:
+        - field_sv_video_type
+        - field_sv_video
+        - field_sv_upload_video
+      parent_name: group_info
+      weight: 7
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: General
+    group_styles:
+      children:
+        - group_sizing
+        - group_misc
+      parent_name: group_info
+      weight: 8
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Styles
+    group_sizing:
+      children:
+        - field_sv_video_ratio
+      parent_name: group_styles
+      weight: 20
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Sizing
+    group_misc:
+      children:
+        - field_sv_video_veil
+        - field_sv_video_extra_class
+        - field_sv_video_extra_attributes
+      parent_name: group_styles
+      weight: 21
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Misc
+_core:
+  default_config_hash: cmE_dC4Lf3n1AmUD6nUharjCd7McYLPepw5U3tM8gxo
+id: block_content.simple_video.default
+targetEntityType: block_content
+bundle: simple_video
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sv_upload_video:
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_sv_video:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
+    region: content
+  field_sv_video_extra_attributes:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sv_video_extra_class:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sv_video_ratio:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sv_video_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sv_video_veil:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

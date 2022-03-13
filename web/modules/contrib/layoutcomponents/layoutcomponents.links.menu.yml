@@ -1,0 +1,46 @@
+layoutcomponents.settings:
+  title: Layout Components
+  route_name: layoutcomponents.settings
+  parent: system.admin_config
+  weight: 0
+  url: internal:/admin/config/layoutcomponents/settings
+
+layoutcomponents.general:
+  title: General
+  description: 'Manage default configuration of Layout Components'
+  parent: layoutcomponents.settings
+  menu_name: admin
+  weight: 1
+  url: internal:/admin/config/layoutcomponents/settings
+
+layoutcomponents.interface:
+  title: Interface
+  description: 'Manage default configuration of the interfaz of Layout Components'
+  parent: layoutcomponents.settings
+  menu_name: admin
+  weight: 2
+  url: internal:/admin/config/layoutcomponents/settings/interface
+
+layoutcomponents.colors:
+  title: Colors
+  description: 'Manage default configuration of the colors of Layout Components'
+  parent: layoutcomponents.settings
+  menu_name: admin
+  weight: 3
+  url: internal:/admin/config/layoutcomponents/settings/colors
+
+layoutcomponents.section:
+  title: Section
+  description: 'Manage default configuration of the sections of Layout Components'
+  parent: layoutcomponents.settings
+  menu_name: admin
+  weight: 4
+  url: internal:/admin/config/layoutcomponents/settings/section
+
+layoutcomponents.column:
+  title: Column
+  description: 'Manage default configuration of the columns of Layout Components'
+  parent: layoutcomponents.settings
+  menu_name: admin
+  weight: 5
+  url: internal:/admin/config/layoutcomponents/settings/column

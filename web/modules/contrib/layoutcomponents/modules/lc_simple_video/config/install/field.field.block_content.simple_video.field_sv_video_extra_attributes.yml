@@ -1,0 +1,19 @@
+uuid: 46fe8feb-e547-4232-8cf8-e847c7a00644
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_video
+    - field.storage.block_content.field_sv_video_extra_attributes
+id: block_content.simple_video.field_sv_video_extra_attributes
+field_name: field_sv_video_extra_attributes
+entity_type: block_content
+bundle: simple_video
+label: 'Extra attributes'
+description: 'Set the extra attributes of this video: attr1|value attr2|value'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

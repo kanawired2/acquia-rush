@@ -1,0 +1,20 @@
+uuid: abe7be87-b59f-4f6f-a330-2325efcbf2bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_sti_size
+field_name: field_sti_size
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

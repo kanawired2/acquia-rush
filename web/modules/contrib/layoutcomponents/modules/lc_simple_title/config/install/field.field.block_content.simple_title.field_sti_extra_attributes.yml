@@ -1,0 +1,21 @@
+uuid: 6b38d974-ac87-4d09-93be-99bcd94855aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_extra_attributes
+_core:
+  default_config_hash: h0Gq48XTvfcgnAbXZ0En85z8A30GdDWB84urtbrots4
+id: block_content.simple_title.field_sti_extra_attributes
+field_name: field_sti_extra_attributes
+entity_type: block_content
+bundle: simple_title
+label: 'Extra Attributes'
+description: 'Set the extra attributes of this text'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

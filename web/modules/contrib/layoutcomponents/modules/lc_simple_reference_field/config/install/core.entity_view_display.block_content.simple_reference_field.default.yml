@@ -1,0 +1,26 @@
+uuid: 27649b8b-90bb-4e8b-a594-a7cfdf9de2ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_reference_field
+    - field.field.block_content.simple_reference_field.field_reference_field
+  module:
+    - layoutcomponents
+id: block_content.simple_reference_field.default
+targetEntityType: block_content
+bundle: simple_reference_field
+mode: default
+content:
+  field_reference_field:
+    weight: 0
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: layoutcomponents_entity_formatter
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

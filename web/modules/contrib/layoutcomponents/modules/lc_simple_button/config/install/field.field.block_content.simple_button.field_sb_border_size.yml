@@ -1,0 +1,27 @@
+uuid: 8e0e1442-67b3-495f-be77-ca6b488d4ac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_button
+    - field.storage.block_content.field_sb_border_size
+_core:
+  default_config_hash: sZt5Vyb39DdZRaoVeUn5nB6gg2qBnTlqXlPh_7stZ5s
+id: block_content.simple_button.field_sb_border_size
+field_name: field_sb_border_size
+entity_type: block_content
+bundle: simple_button
+label: 'Border size '
+description: 'Set the border size of this button'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 20
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,8 @@
+uuid: 50e4e43c-cb89-4e5a-88fc-f50e061d5f6d
+langcode: en
+status: true
+dependencies: {  }
+id: simple_view_carousel
+label: 'View Carousel'
+revision: 1
+description: ''

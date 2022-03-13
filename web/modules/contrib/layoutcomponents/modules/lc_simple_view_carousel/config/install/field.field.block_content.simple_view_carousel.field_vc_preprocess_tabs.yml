@@ -1,0 +1,23 @@
+uuid: efaab6a3-97a8-4aeb-bd07-124e352cbcc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_view_carousel
+    - field.storage.block_content.field_vc_preprocess_tabs
+id: block_content.simple_view_carousel.field_vc_preprocess_tabs
+field_name: field_vc_preprocess_tabs
+entity_type: block_content
+bundle: simple_view_carousel
+label: 'Preprocess the tabs'
+description: 'Check this checkbox to preprocess the tabs with LC format'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

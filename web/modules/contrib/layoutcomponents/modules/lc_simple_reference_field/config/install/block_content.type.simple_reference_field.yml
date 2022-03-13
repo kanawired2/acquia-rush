@@ -1,0 +1,8 @@
+uuid: 955cee5e-1978-47ea-93e2-60c5c917cf97
+langcode: en
+status: true
+dependencies: {  }
+id: simple_reference_field
+label: 'Reference field'
+revision: 0
+description: ''

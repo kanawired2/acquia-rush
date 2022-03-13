@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * LC Simple cards module file.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function lc_simple_card_theme($existing, $type, $theme, $path) {
+  return [
+    'layoutcomponents_block_content__simple_card' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function lc_simple_card_page_attachments(&$page) {
+  $page['#attached']['library'][] = 'lc_simple_card/lc_simple_card';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function lc_simple_card_preprocess_block(&$variables) {
+  if ($variables['base_plugin_id'] != 'inline_block') {
+    return;
+  }
+
+  if ($variables['derivative_plugin_id'] != 'simple_card') {
+    return;
+  }
+
+  /** @var  \Drupal\layoutcomponents\LcLayoutsManager $helper */
+  $helper = \Drupal::service("plugin.manager.layoutcomponents_layouts");
+
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['content']['#block_content'];
+  $block_id = str_replace(' ', '_', $block->uuid());
+
+  $variables['content_attributes']['class'] = [
+    'lc-inline_block_' . $block_id . '-card-container-edit',
+  ];
+
+}
+
+/**
+ * Implements hook_block_type_form_alter().
+ */
+function lc_simple_card_block_type_form_alter(array &$form, FormStateInterface &$form_state, $block_type) {
+  if ($block_type == "simple_card") {
+    if (!array_key_exists('#block', $form)) {
+      return;
+    }
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $form['#block'];
+    $block_id = str_replace(" ", "_", $block->uuid());
+    _lc_simple_card_form_alter($form, $block_id);
+  }
+}
+
+/**
+ * Change the elements with LayoutComponents Api.
+ *
+ * @param array $form
+ *   The array with the form.
+ * @param string $block_id
+ *   The id of the block.
+ */
+function _lc_simple_card_form_alter(array &$form, $block_id) {
+  /** @var \Drupal\layoutcomponents\Api\Component $lcApi */
+  $lcApi = Drupal::service('layoutcomponents.apiComponent');
+
+  // LC inline video extra class.
+  $extra_class = $form['field_sca_extra_class']['widget'][0]['value'];
+  $form['field_sca_extra_class']['widget'][0]['value'] = $lcApi->getComponentElement(
+    [
+      'id' => 'block_' . $block_id . '-card-container',
+      'input' => 'text',
+      'type' => 'class',
+      'style' => 'extra_class',
+      'element' => 'text',
+    ],
+    $extra_class
+  );
+}

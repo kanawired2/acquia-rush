@@ -1,0 +1,20 @@
+uuid: 9db322b9-a558-4a45-a3be-52bd73d1f8ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_si_height
+field_name: field_si_height
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

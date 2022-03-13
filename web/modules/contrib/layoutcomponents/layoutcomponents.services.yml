@@ -1,0 +1,29 @@
+services:
+  layoutcomponents.route_subscriber:
+    class: Drupal\layoutcomponents\Routing\LcRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  plugin.manager.layoutcomponents_layouts:
+    class: \Drupal\layoutcomponents\LcLayoutsManager
+    arguments: ['@plugin.manager.core.layout', '@entity_type.manager', '@entity_display.repository', '@current_user', '@uuid', '@tempstore.private']
+
+  layoutcomponents.LayoutComponentsTwigExtension:
+    class: Drupal\layoutcomponents\LayoutComponentsTwigExtension
+    tags:
+      - { name: twig.extension }
+
+  layoutcomponents.apiComponent:
+    class: Drupal\layoutcomponents\Api\Component
+    arguments: ['@config.factory']
+
+  plugin.manager.element_info:
+    class: Drupal\layoutcomponents\LcElementInfoManager
+    arguments: ['@container.namespaces', '@cache.discovery', '@cache_tags.invalidator', '@module_handler', '@theme.manager']
+
+  layoutcomponents.update:
+    class: \Drupal\layoutcomponents\LcUpdateManager
+    arguments: [ '@config.storage', '@config.factory', '@uuid' ]
+
+  layoutcomponents.section:
+    class: \Drupal\layoutcomponents\LcSectionManager

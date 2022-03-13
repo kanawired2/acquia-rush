@@ -1,0 +1,21 @@
+uuid: bcdff166-b219-4249-922b-755ced283c68
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_title
+    - field.storage.block_content.field_sti_extra_class
+_core:
+  default_config_hash: eUqIYh8g21B2qaCyWyg8umJcvbbgN4lKu2GoelPP5K0
+id: block_content.simple_title.field_sti_extra_class
+field_name: field_sti_extra_class
+entity_type: block_content
+bundle: simple_title
+label: 'Extra class'
+description: 'Set the extra classes of this text'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,263 @@
+// mixins library
+
+@import "mixins.scss";
+
+// Variables
+
+//------------------------------------------------------------------ Material Icons
+
+$material-icon-font: 'Material Icons';
+
+//------------------------------------------------------------------ Colors
+
+//---------------------------------------- Layout colors
+
+//---------------------------------------- Blue palette
+
+$blue-darkest: #02202B;
+$blue-darker: #013D55;
+$blue-dark: #005574;
+$blue-medium:#0077A2;
+$blue-light:#0196CE;
+$blue-lighter:#00BAFF;
+$blue-extralight: #F0F7FA;
+$blue-extralight-border: #E0EFF4;
+$blue-soft: #b2d3f3;
+
+$orange:#FD850B;
+$orange-dark:#C86500;
+
+//---------------------------------------- Grey palette
+
+$grey-theme-darkest: #1a1a1a;
+$grey-theme-darker: #333333;
+$grey-theme-dark: #4d4d4d;
+$grey-theme-medium:#666666;
+$grey-theme-light:#808080;
+$grey-theme-lighter:#999999;
+$grey-theme-extralight: #f2f2f2;
+$grey-theme-extralight-border: #cccccc;
+$grey-theme-soft: #b3b3b3;
+
+$red-darker: #Ad1616;
+$red-dark: #D93030;
+$red-medium: #ef5555;
+$red-light: #ff7e7e;
+$red-lighter: #ffA8A8;
+
+//---------------------------------------- Neutral shades
+
+$white: #ffffff;
+$black: #000000;
+$grey-dark: #333333;
+$grey: #555;
+
+$grey-medium-dividers: #e3e3e3;
+$grey-medium-disabled: #cccccc;
+$grey-medium-inputtext: #bababa;
+
+//---------------------------------------- Aditional accent colors
+
+$additional-yellow: #f4e496;
+$additional-beige: #d3cea9;
+$additional-pale: #faf6d9;
+$additional-darkaqua: #0a6969;
+$darkaqua-light: #dde9e9;
+
+//---------------------------------------- Alert colors
+
+$alert-info: $blue-lighter;//#dde8f0
+$alert-warning: $additional-pale; //#faf6d9
+$alert-error: #efdade;
+$alert-error-icon: #cb6e82;
+$alert-susccess: #dff0d8;
+
+
+//---------------------------------------- Bootstrap colors
+
+$brand-success: $alert-susccess; //#dff0d8
+$brand-info: $alert-info; //#dde8f0
+$brand-warning: $alert-warning; //#faf6d9
+$brand-danger: $alert-error; //#efdade
+
+//---------------------------------------- Scaffolding
+
+$body-bg: $white;
+$text-color: $grey-dark;
+
+//------------------------------------------------------------------ Typography
+
+$font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, "Roboto Slab", Times, serif;
+
+
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 14px;
+$font-size-medium: 16px;
+$font-size-large: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)); // ~12px
+
+$font-size-h1: floor(($font-size-base * 2.85)); // ~40px
+$font-size-h2: floor(($font-size-base * 2.5)); // ~35px
+$font-size-h3: ceil(($font-size-base * 2.1)); // ~30px
+$font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)); // ~20px
+
+
+//------------------------------------------------------------------ Components
+
+
+$padding-base-medium: 6px;
+$padding-base-large: 12px;
+
+$padding-icons: 4px 6px;
+
+$padding-base-vertical: 6px;
+$padding-base-horizontal: 12px;
+
+$padding-large-vertical: 10px;
+$padding-large-horizontal: 16px;
+
+$padding-small-vertical: 5px;
+$padding-small-horizontal: 10px;
+
+$padding-xs-vertical: 1px;
+$padding-xs-horizontal: 5px;
+
+$line-height-large: 1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small: 1.5;
+
+$border-radius-none: 0;
+$border-radius-base: 4px;
+$border-radius-large: 6px;
+$border-radius-small: 3px;
+$border-radius-xl: 12px;
+
+//------------------------------------------------------------------ Inputs
+
+$btn-font-weight: normal;
+
+$btn-border-radius-base: 5;
+$btn-border-radius-large: 0;
+$btn-border-radius-small: 0;
+
+$input-bg: white;
+$input-bg-disabled: $grey-theme-extralight;
+
+$input-color: $grey;
+$input-border: $grey-medium-disabled;
+
+
+$input-border-radius: $border-radius-base;
+$input-border-radius-large: $border-radius-large;
+$input-border-radius-small: $border-radius-small;
+
+
+$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2);
+$input-height-large: (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+$input-height-small: (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+
+
+
+//------------------------------------------------------------------ Media queries breakpoints
+
+//---------------------------------------- Extra small screen - Mobile
+
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+$screen-phone: $screen-xs-min;
+
+//---------------------------------------- Small screen / tablet
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-tablet: $screen-sm-min;
+
+//---------------------------------------- Medium screen / tablet
+
+$screen-md: 991px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+
+//---------------------------------------- Large screen / Desktop
+
+$screen-lg: 1024px;
+$screen-lg-min: $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+
+//---------------------------------------- Estra Large screen / Desktop
+
+$screen-xl: 1200px;
+$screen-xl-min: $screen-xl;
+$screen-xl-desktop: $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+
+//---------------------------------------- Layout
+
+%max-width {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+//------------------------------------------------------------------ Text
+
+//---------------------------------------- Font family
+
+%librefranklin{
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+%fontawesome {
+  font-family: "FontAwesome";
+}
+
+//---------------------------------------- Font weight
+
+%thin {
+  font-weight: 100;
+}
+
+%light {
+  font-weight: 300;
+}
+
+%regular {
+  font-weight: 400;
+}
+
+%medium {
+  font-weight: 500;
+}
+
+%bold {
+  font-weight: 700;
+}
+
+%black {
+  font-weight: 900;
+}
+
+//---------------------------------------- Titles
+
+
+
+
+
+
+
